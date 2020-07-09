@@ -29,4 +29,18 @@
     
   </url>
   
+  <url>
+    <loc>http://yoursite.com/css/var.css</loc>
+    
+    <lastmod>2020-07-08T12:25:10.914Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/css/index.css</loc>
+    
+    <lastmod>2020-07-08T12:25:10.913Z</lastmod>
+    
+  </url>
+  
 </urlset>
