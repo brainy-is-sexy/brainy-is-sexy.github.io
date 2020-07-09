@@ -4,7 +4,8 @@
     <title>使用git上传本地代码到github仓库</title>
     <url>/2020/07/09/%E4%BD%BF%E7%94%A8git%E4%B8%8A%E4%BC%A0%E6%9C%AC%E5%9C%B0%E4%BB%A3%E7%A0%81%E5%88%B0github%E4%BB%93%E5%BA%93/</url>
     <content><![CDATA[<hr>
-<hr>
+<a id="more"></a>
+
 <p>前提条件：安装git，拥有github账号</p>
 <hr>
 <h4 id="1-创建一个github仓库"><a href="#1-创建一个github仓库" class="headerlink" title="1.创建一个github仓库"></a>1.创建一个github仓库</h4><p><img src="https://img-blog.csdnimg.cn/20200630211236580.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3UwMTM2NTQzNzM=,size_16,color_FFFFFF,t_70" alt=""></p>
@@ -32,10 +33,10 @@
 
 
 
-<div class="note class_name=warning"><p>注意: github创建仓库时有一个Initialize this repository with a README，</p>
-<p>如果勾选的话$ git push -u origin master 我们则会出错，</p>
-<p>使用如下命令解决：$ git pull –rebase origin master，</p>
-<p>之后再进行$ git push -u origin master 就可以成功了。 </p></div>]]></content>
+<div class="note class_name=warning"><p>注意: github创建仓库时有一个Initialize this repository with a README</p>
+<p>如果勾选的话$ git push -u origin master 我们则会出错</p>
+<p>使用如下命令解决：$ git pull –rebase origin master</p>
+<p>之后再进行$ git push -u origin master 就可以成功了 </p></div>]]></content>
       <categories>
         <category>实用技巧</category>
       </categories>
