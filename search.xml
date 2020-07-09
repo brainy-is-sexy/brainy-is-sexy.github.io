@@ -32,10 +32,7 @@
 
 
 
-<blockquote class="blockquote-center">
-注意: github创建仓库时有一个Initialize this repository with a README，如果勾选的话$ git push -u origin master 我们则会出错，使用如下命令解决：$ git pull --rebase origin master，之后再进行$ git push -u origin master 就可以成功了。</blockquote>
-
-<div class="note class_name"><p>Content (md partial supported) </p></div>]]></content>
+<div class="note class_name=“warning”"><p>注意: github创建仓库时有一个Initialize this repository with a README，如果勾选的话$ git push -u origin master 我们则会出错，使用如下命令解决：$ git pull –rebase origin master，之后再进行$ git push -u origin master 就可以成功了。 </p></div>]]></content>
       <categories>
         <category>实用技巧</category>
       </categories>
