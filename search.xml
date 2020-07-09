@@ -30,9 +30,12 @@
 <p>推送到github仓库：</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git push -u origin master</span><br></pre></td></tr></table></figure>
 
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;blockquote class&#x3D;&quot;blockquote-center&quot;&gt;</span><br><span class="line">注意:github创建仓库时有一个Initialize this repository with a README</span><br><span class="line">*如果勾选的话$ git push -u origin master 我们则会出错，使用如下命令解决</span><br><span class="line">*$ git pull --rebase origin master</span><br><span class="line">*之后再进行$ git push -u origin master 就可以成功了</span><br><span class="line">&lt;&#x2F;blockquote&gt;</span><br></pre></td></tr></table></figure>
 
-]]></content>
+
+<blockquote class="blockquote-center">
+注意: github创建仓库时有一个Initialize this repository with a README，如果勾选的话$ git push -u origin master 我们则会出错，使用如下命令解决：$ git pull --rebase origin master，之后再进行$ git push -u origin master 就可以成功了。</blockquote>
+
+<div class="note class_name"><p>Content (md partial supported) </p></div>]]></content>
       <categories>
         <category>实用技巧</category>
       </categories>
