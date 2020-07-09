@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>brainy is the new sexy</title>
+  
+  
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="http://yoursite.com/"/>
+  <updated>2020-07-09T03:43:13.660Z</updated>
+  <id>http://yoursite.com/</id>
+  
+  <author>
+    <name>Error</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>jiaocheng</title>
+    <link href="http://yoursite.com/2020/07/09/jiaocheng/"/>
+    <id>http://yoursite.com/2020/07/09/jiaocheng/</id>
+    <published>2020-07-09T03:42:12.000Z</published>
+    <updated>2020-07-09T03:43:13.660Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="吊袜带"><a href="#吊袜带" class="headerlink" title="吊袜带"></a>吊袜带</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">System.out.println(&quot;hello world&quot;)</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;吊袜带&quot;&gt;&lt;a href=&quot;#吊袜带&quot; class=&quot;headerlink&quot; title=&quot;吊袜带&quot;&gt;&lt;/a&gt;吊袜带&lt;/h1&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;s
+      
+    
+    </summary>
+    
+    
+    
+      <category term="-web前端" scheme="http://yoursite.com/tags/web%E5%89%8D%E7%AB%AF/"/>
+    
+  </entry>
+  
+</feed>
