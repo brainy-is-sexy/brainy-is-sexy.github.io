@@ -48,7 +48,10 @@
   <entry>
     <title>Java位运算</title>
     <url>/2020/07/19/Java%E4%BD%8D%E8%BF%90%E7%AE%97/</url>
-    <content><![CDATA[<h2 id="位运算符"><a href="#位运算符" class="headerlink" title="位运算符"></a>位运算符</h2><h4 id="1-1-Java支持的位运算符"><a href="#1-1-Java支持的位运算符" class="headerlink" title="1.1 Java支持的位运算符"></a>1.1 Java支持的位运算符</h4><p>&amp;：按位与</p>
+    <content><![CDATA[<hr>
+<a id="more"></a>
+
+<h2 id="位运算符"><a href="#位运算符" class="headerlink" title="位运算符"></a>位运算符</h2><h4 id="1-1-Java支持的位运算符"><a href="#1-1-Java支持的位运算符" class="headerlink" title="1.1 Java支持的位运算符"></a>1.1 Java支持的位运算符</h4><p>&amp;：按位与</p>
 <p>|：按位或</p>
 <p>~：按位非</p>
 <p>^：按位异或</p>
