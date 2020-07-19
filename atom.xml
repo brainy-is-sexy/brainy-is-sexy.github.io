@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2020-07-09T10:42:12.606Z</updated>
+  <updated>2020-07-19T09:55:58.489Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Java位运算</title>
+    <link href="http://yoursite.com/2020/07/19/Java%E4%BD%8D%E8%BF%90%E7%AE%97/"/>
+    <id>http://yoursite.com/2020/07/19/Java%E4%BD%8D%E8%BF%90%E7%AE%97/</id>
+    <published>2020-07-19T09:39:00.000Z</published>
+    <updated>2020-07-19T09:55:58.489Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="位运算符"><a href="#位运算符" class="headerlink" title="位运算符"></a>位运算符</h2><h4 id="1-1-Java支持的位运算符"><a href="#1-1-Java支持的位运算符" class="headerlink" title="1.1 Java支持的位运算符"></a>1.1 Java支持的位运算符</h4><p>&amp;：按位与</p><p>|：按位或</p><p>~：按位非</p><p>^：按位异或</p><p>&lt;&lt;：左位移</p><p>&gt;&gt;：右位移运算符</p><p>&gt;&gt;&gt;：无符号右移运算符</p><h4 id=""><a href="#" class="headerlink" title=""></a></h4><h4 id="1-2-按位与（-amp-）"><a href="#1-2-按位与（-amp-）" class="headerlink" title="1.2  按位与（&amp;）"></a>1.2  按位与（&amp;）</h4><table><thead><tr><th>操作数1</th><th>0</th><th>0</th><th>1</th><th>1</th></tr></thead><tbody><tr><td>操作数2</td><td>0</td><td>1</td><td>0</td><td>1</td></tr><tr><td>按位与</td><td>0</td><td>0</td><td>0</td><td>1</td></tr></tbody></table><p>规则总结：只有两个操作数对应位同为1时，结果为1，其余全为0. （或者是只要有一个操作数为0，结果就为0）</p><h4 id="1-3-按位或（-）"><a href="#1-3-按位或（-）" class="headerlink" title="1.3  按位或（|）"></a>1.3  按位或（|）</h4><table><thead><tr><th>操作数1</th><th>0</th><th>0</th><th>1</th><th>1</th></tr></thead><tbody><tr><td>操作数2</td><td>0</td><td>1</td><td>0</td><td>1</td></tr><tr><td>按位或</td><td>0</td><td>1</td><td>1</td><td>1</td></tr></tbody></table><p>规则总结：只有两个操作数对应位同为0时，结果为0，其余全为1.（或者是只要有一个操作数为1，结果就为1）。</p><h4 id="1-4-按位非（-）"><a href="#1-4-按位非（-）" class="headerlink" title="1.4  按位非（~）"></a>1.4  按位非（~）</h4><table><thead><tr><th>操作数1</th><th>0</th><th>0</th><th>1</th><th align="center">1</th></tr></thead><tbody><tr><td>按位非</td><td>1</td><td>1</td><td>0</td><td align="center">0</td></tr></tbody></table><h4 id="1-3-按位异或（-）"><a href="#1-3-按位异或（-）" class="headerlink" title="1.3  按位异或（^）"></a>1.3  按位异或（^）</h4><table><thead><tr><th>操作数1</th><th>0</th><th>0</th><th>1</th><th>1</th></tr></thead><tbody><tr><td>操作数2</td><td>0</td><td>1</td><td>0</td><td>1</td></tr><tr><td>按位异或</td><td>0</td><td>1</td><td>1</td><td>0</td></tr></tbody></table><p>规则总结：相同为0，异：1.</p><h4 id="1-6-左位移（-lt-lt-）"><a href="#1-6-左位移（-lt-lt-）" class="headerlink" title="1.6 左位移（&lt;&lt;）"></a>1.6 左位移（&lt;&lt;）</h4><p>算术左移（&lt;&lt;）: 符号位不变，低位补0。如：2&lt;&lt;2结果为8。</p><p><img src="https://img-blog.csdn.net/20161012133936660?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQv/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/Center" alt="img"></p><h4 id="1-7-右位移（-gt-gt-）"><a href="#1-7-右位移（-gt-gt-）" class="headerlink" title="1.7 右位移（&gt;&gt;）"></a>1.7 右位移（&gt;&gt;）</h4><p>低位溢出，符号位不变，并用符号位补溢出的高位。如：-6&gt;&gt;2结果为-2。</p><p><img src="https://img-blog.csdn.net/20161012133940950?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQv/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/Center" alt="img"></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;位运算符&quot;&gt;&lt;a href=&quot;#位运算符&quot; class=&quot;headerlink&quot; title=&quot;位运算符&quot;&gt;&lt;/a&gt;位运算符&lt;/h2&gt;&lt;h4 id=&quot;1-1-Java支持的位运算符&quot;&gt;&lt;a href=&quot;#1-1-Java支持的位运算符&quot; class=&quot;header
+      
+    
+    </summary>
+    
+    
+      <category term="Java基础" scheme="http://yoursite.com/categories/Java%E5%9F%BA%E7%A1%80/"/>
+    
+    
+      <category term="Java" scheme="http://yoursite.com/tags/Java/"/>
+    
+  </entry>
   
   <entry>
     <title>使用git上传本地代码到github仓库</title>
