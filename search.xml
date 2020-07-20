@@ -214,4 +214,56 @@
         <tag>算法</tag>
       </tags>
   </entry>
+  <entry>
+    <title>LeetCode 104.二叉树的最大深度</title>
+    <url>/2020/07/20/LeetCode-1104-%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E6%9C%80%E5%A4%A7%E6%B7%B1%E5%BA%A6/</url>
+    <content><![CDATA[<hr>
+<a id="more"></a>
+
+<h4 id="方法一：递归"><a href="#方法一：递归" class="headerlink" title="方法一：递归"></a>方法一：递归</h4><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">maxDepth</span><span class="params">(TreeNode root)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (root == <span class="keyword">null</span>) &#123;</span><br><span class="line">      <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">      <span class="keyword">int</span> left_height = maxDepth(root.left);</span><br><span class="line">      <span class="keyword">int</span> right_height = maxDepth(root.right);</span><br><span class="line">      <span class="keyword">return</span> java.lang.Math.max(left_height, right_height) + <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h5 id="复杂度分析"><a href="#复杂度分析" class="headerlink" title="复杂度分析"></a>复杂度分析</h5><p>时间复杂度：我们每个结点只访问一次，因此时间复杂度为 O(N)，<br>其中 N 是结点的数量。<br>空间复杂度：在最糟糕的情况下，树是完全不平衡的，例如每个结点只剩下左子结点，递归将会被调用 N次（树的高度），因此保持调用栈的存储将是 O(N)。但在最好的情况下（树是完全平衡的），树的高度将是 \log(N)。因此，在这种情况下的空间复杂度将是 O(\log(N))。</p>
+<h4 id="方法二：迭代"><a href="#方法二：迭代" class="headerlink" title="方法二：迭代"></a>方法二：迭代</h4><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">if</span> (root == <span class="keyword">null</span>) &#123;</span><br><span class="line">           <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">       &#125;</span><br><span class="line">       <span class="comment">// bfs</span></span><br><span class="line">       Queue&lt;TreeNode&gt; queue = <span class="keyword">new</span> LinkedList&lt;&gt;();</span><br><span class="line">       <span class="keyword">int</span> depth = <span class="number">0</span>;</span><br><span class="line">       queue.add(root);</span><br><span class="line">       <span class="keyword">while</span> (!queue.isEmpty()) &#123;</span><br><span class="line">           <span class="keyword">int</span> size = queue.size();</span><br><span class="line">           depth++;</span><br><span class="line">           <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; size; i++) &#123;</span><br><span class="line">               TreeNode temp = queue.poll();</span><br><span class="line">               <span class="keyword">if</span> (temp.left != <span class="keyword">null</span>) &#123;</span><br><span class="line">                   queue.add(temp.left);</span><br><span class="line">               &#125;</span><br><span class="line">               <span class="keyword">if</span> (temp.right != <span class="keyword">null</span>) &#123;</span><br><span class="line">                   queue.add(temp.right);</span><br><span class="line">               &#125;</span><br><span class="line">           &#125;</span><br><span class="line">       &#125;</span><br><span class="line">       <span class="keyword">return</span> depth;</span><br></pre></td></tr></table></figure>
+
+<p><strong>复杂度分析</strong></p>
+<ul>
+<li>时间复杂度：O(N)。</li>
+<li>空间复杂度：O(N)。</li>
+</ul>
+]]></content>
+      <categories>
+        <category>LeetCode</category>
+      </categories>
+      <tags>
+        <tag>Java</tag>
+        <tag>算法</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>LeetCode 21.合并两个有序链表</title>
+    <url>/2020/07/20/LeetCode-21-%E5%90%88%E5%B9%B6%E4%B8%A4%E4%B8%AA%E6%9C%89%E5%BA%8F%E9%93%BE%E8%A1%A8/</url>
+    <content><![CDATA[<hr>
+<a id="more"></a>
+
+<h4 id="方法一：递归"><a href="#方法一：递归" class="headerlink" title="方法一：递归"></a>方法一：递归</h4><p>如果 l1 或者 l2 一开始就是空链表 ，那么没有任何操作需要合并，所以我们只需要返回非空链表。否则，我们要判断 l1 和 l2 哪一个链表的头节点的值更小，然后递归地决定下一个添加到结果里的节点。如果两个链表有一个为空，递归结束。</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> ListNode <span class="title">mergeTwoLists</span><span class="params">(ListNode l1, ListNode l2)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (l1 == <span class="keyword">null</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> l2;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span> (l2 == <span class="keyword">null</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> l1;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span> (l1.val &lt; l2.val) &#123;</span><br><span class="line">            l1.next = mergeTwoLists(l1.next, l2);</span><br><span class="line">            <span class="keyword">return</span> l1;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span> &#123;</span><br><span class="line">            l2.next = mergeTwoLists(l1, l2.next);</span><br><span class="line">            <span class="keyword">return</span> l2;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h5 id="复杂度分析"><a href="#复杂度分析" class="headerlink" title="复杂度分析"></a>复杂度分析</h5><p>时间复杂度：O(n + m)O(n+m)，其中 n 和 m 分别为两个链表的长度。因为每次调用递归都会去掉 l1 或者 l2 的头节点（直到至少有一个链表为空），函数 mergeTwoList 至多只会递归调用每个节点一次。因此，时间复杂度取决于合并后的链表长度，即 O(n+m)。</p>
+<p>空间复杂度：O(n + m)，其中 n 和 m 分别为两个链表的长度。递归调用 mergeTwoLists 函数时需要消耗栈空间，栈空间的大小取决于递归调用的深度。结束递归调用时 mergeTwoLists 函数最多调用 n+m 次，因此空间复杂度为 O(n+m)。</p>
+<h4 id="方法二：迭代"><a href="#方法二：迭代" class="headerlink" title="方法二：迭代"></a>方法二：迭代</h4><h5 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h5><p>我们可以用迭代的方法来实现上述算法。当 l1 和 l2 都不是空链表时，判断 l1 和 l2 哪一个链表的头节点的值更小，将较小值的节点添加到结果里，当一个节点被添加到结果里之后，将对应链表中的节点向后移一位。</p>
+<h5 id="算法"><a href="#算法" class="headerlink" title="算法"></a>算法</h5><p>首先，我们设定一个哨兵节点 prehead ，这可以在最后让我们比较容易地返回合并后的链表。我们维护一个 prev 指针，我们需要做的是调整它的 next 指针。然后，我们重复以下过程，直到 l1 或者 l2 指向了 null ：如果 l1 当前节点的值小于等于 l2 ，我们就把 l1 当前的节点接在 prev 节点的后面同时将 l1 指针往后移一位。否则，我们对 l2 做同样的操作。不管我们将哪一个元素接在了后面，我们都需要把 prev 向后移一位。</p>
+<p>在循环终止的时候， l1 和 l2 至多有一个是非空的。由于输入的两个链表都是有序的，所以不管哪个链表是非空的，它包含的所有元素都比前面已经合并链表中的所有元素都要大。这意味着我们只需要简单地将非空链表接在合并链表的后面，并返回合并链表即可。</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> ListNode <span class="title">mergeTwoLists</span><span class="params">(ListNode l1, ListNode l2)</span> </span>&#123;</span><br><span class="line">        ListNode prehead = <span class="keyword">new</span> ListNode(-<span class="number">1</span>);</span><br><span class="line"></span><br><span class="line">        ListNode prev = prehead;</span><br><span class="line">        <span class="keyword">while</span> (l1 != <span class="keyword">null</span> &amp;&amp; l2 != <span class="keyword">null</span>) &#123;</span><br><span class="line">            <span class="keyword">if</span> (l1.val &lt;= l2.val) &#123;</span><br><span class="line">                prev.next = l1;</span><br><span class="line">                l1 = l1.next;</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                prev.next = l2;</span><br><span class="line">                l2 = l2.next;</span><br><span class="line">            &#125;</span><br><span class="line">            prev = prev.next;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 合并后 l1 和 l2 最多只有一个还未被合并完，我们直接将链表末尾指向未合并完的链表即可</span></span><br><span class="line">        prev.next = l1 == <span class="keyword">null</span> ? l2 : l1;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> prehead.next;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h5 id="复杂度分析-1"><a href="#复杂度分析-1" class="headerlink" title="复杂度分析"></a>复杂度分析</h5><p>时间复杂度：O(n + m)，其中 n和 m 分别为两个链表的长度。因为每次循环迭代中，l1 和 l2 只有一个元素会被放进合并链表中， 因此 while 循环的次数不会超过两个链表的长度之和。所有其他操作的时间复杂度都是常数级别的，因此总的时间复杂度为 O(n+m)。</p>
+<p>空间复杂度：O(1) 。我们只需要常数的空间存放若干变量。</p>
+]]></content>
+      <categories>
+        <category>LeetCode</category>
+      </categories>
+      <tags>
+        <tag>Java</tag>
+        <tag>算法</tag>
+      </tags>
+  </entry>
 </search>
