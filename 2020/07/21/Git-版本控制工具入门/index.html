@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="git," />
 
 
 
@@ -83,15 +83,14 @@
 
 
 
-<meta name="description" content="今日事，今日毕">
-<meta property="og:type" content="website">
-<meta property="og:title" content="分类">
-<meta property="og:url" content="http://yoursite.com/categories/index.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Git 版本控制工具入门">
+<meta property="og:url" content="http://yoursite.com/2020/07/21/Git-%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6%E5%B7%A5%E5%85%B7%E5%85%A5%E9%97%A8/index.html">
 <meta property="og:site_name" content="brainy is the new sexy">
-<meta property="og:description" content="今日事，今日毕">
-<meta property="article:published_time" content="2020-07-09T02:59:14.000Z">
-<meta property="article:modified_time" content="2020-07-09T05:25:39.196Z">
+<meta property="article:published_time" content="2020-07-21T12:45:01.000Z">
+<meta property="article:modified_time" content="2020-07-21T13:25:52.844Z">
 <meta property="article:author" content="Error">
+<meta property="article:tag" content="git">
 <meta name="twitter:card" content="summary">
 
 
@@ -122,13 +121,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/categories/"/>
+  <link rel="canonical" href="http://yoursite.com/2020/07/21/Git-版本控制工具入门/"/>
 
 
 
 
 
-  <title>分类 | brainy is the new sexy</title>
+  <title>Git 版本控制工具入门 | brainy is the new sexy</title>
   
 
 
@@ -297,40 +296,215 @@
 
   <div id="posts" class="posts-expand">
     
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/07/21/Git-%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6%E5%B7%A5%E5%85%B7%E5%85%A5%E9%97%A8/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Error">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/tou.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="brainy is the new sexy">
+    </span>
+
     
-    
-    <div class="post-block page">
       <header class="post-header">
 
-	<h1 class="post-title" itemprop="name headline">分类</h1>
-
-
-
-</header>
-
-      
-      
-      
-      <div class="post-body">
         
         
-          <div class="category-all-page">
-            <div class="category-all-title">
-                目前共计 3 个分类
-            </div>
-            <div class="category-all">
-              <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Java%E5%9F%BA%E7%A1%80/">Java基础</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/LeetCode/">LeetCode</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%AE%9E%E7%94%A8%E6%8A%80%E5%B7%A7/">实用技巧</a><span class="category-list-count">2</span></li></ul>
-            </div>
-          </div>
+          <h1 class="post-title" itemprop="name headline">Git 版本控制工具入门</h1>
         
-      </div>
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-07-21T20:45:01+08:00">
+                2020-07-21
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%AE%9E%E7%94%A8%E6%8A%80%E5%B7%A7/" itemprop="url" rel="index">
+                    <span itemprop="name">实用技巧</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
       
       
+
+      
+        <hr>
+<a id="more"></a>
+
+<h4 id="Git-与其他版本管理系统的主要区别"><a href="#Git-与其他版本管理系统的主要区别" class="headerlink" title="Git 与其他版本管理系统的主要区别"></a>Git 与其他版本管理系统的主要区别</h4><p>​    大部分版本控制系统（CVS、Subversion、Perforce、Bazaar 等等）都是以文件变更列表的方式存储信息，这类系统将它们保存的信息看作是一组基本文件和每个文件随时间逐步累积的差异。</p>
+<p>​    Git 不按照以上方式对待或保存数据。 反之，Git 更像是把数据看作是对小型文件系统的一组快照。 每次你提交更新，或在 Git 中保存项目状态时，它主要对当时的全部文件制作一个快照并保存这个快照的索引。 为了高效，如果文件没有修改，Git 不再重新存储该文件，而是只保留一个链接指向之前存储的文件。 Git 对待数据更像是一个 快照流。</p>
+<h4 id="本地仓库"><a href="#本地仓库" class="headerlink" title="本地仓库"></a>本地仓库</h4><h5 id="获取git仓库"><a href="#获取git仓库" class="headerlink" title="获取git仓库"></a>获取git仓库</h5><p>在现有目录中初始化仓库: 进入项目目录运行命令,该命令将创建一个名为 <code>.git</code> 的子目录。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git init</span><br></pre></td></tr></table></figure>
+
+<p><strong>检测当前文件状态</strong> </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git status</span><br></pre></td></tr></table></figure>
+
+<p><strong>提出更改（把它们添加到暂存区</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git add 文件</span><br></pre></td></tr></table></figure>
+
+<p><strong>提交更新:</strong> </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git commit -m &quot;代码提交信息&quot;</span><br></pre></td></tr></table></figure>
+
+<h5 id="对文件重命名-："><a href="#对文件重命名-：" class="headerlink" title="对文件重命名 ："></a><strong>对文件重命名</strong> ：</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git mv README.md README</span><br></pre></td></tr></table></figure>
+
+<h5 id="创建分支"><a href="#创建分支" class="headerlink" title="创建分支"></a>创建分支</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git branch 分支名</span><br></pre></td></tr></table></figure>
+
+<h5 id="切换到分支-记录"><a href="#切换到分支-记录" class="headerlink" title="切换到分支/记录"></a>切换到分支/记录</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git checkout 分支名&#x2F;记录名</span><br></pre></td></tr></table></figure>
+
+<h5 id="分支合并两种方法："><a href="#分支合并两种方法：" class="headerlink" title="分支合并两种方法："></a>分支合并两种方法：</h5><h6 id="Merge：该方法合并会创建一个新的节点，该节点继承合并的两个节点的所有记录。"><a href="#Merge：该方法合并会创建一个新的节点，该节点继承合并的两个节点的所有记录。" class="headerlink" title="Merge：该方法合并会创建一个新的节点，该节点继承合并的两个节点的所有记录。"></a>Merge：该方法合并会创建一个新的节点，该节点继承合并的两个节点的所有记录。</h6><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git merge 待合并分支</span><br></pre></td></tr></table></figure>
+
+<h6 id="rebase：该方法将原分支的记录创建一个副本移到待合并的分支的顶端，是记录树只有一条。"><a href="#rebase：该方法将原分支的记录创建一个副本移到待合并的分支的顶端，是记录树只有一条。" class="headerlink" title="rebase：该方法将原分支的记录创建一个副本移到待合并的分支的顶端，是记录树只有一条。"></a>rebase：该方法将原分支的记录创建一个副本移到待合并的分支的顶端，是记录树只有一条。</h6><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git rebase 待合并分支</span><br></pre></td></tr></table></figure>
+
+<h5 id="相对引用：-相当于往上移动一个记录，-4向上移动4个记录"><a href="#相对引用：-相当于往上移动一个记录，-4向上移动4个记录" class="headerlink" title="相对引用：^相当于往上移动一个记录，~4向上移动4个记录"></a>相对引用：^相当于往上移动一个记录，~4向上移动4个记录</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git checkout 分支名^ </span><br><span class="line">git checkout 分支名~3</span><br></pre></td></tr></table></figure>
+
+<h5 id="强制修改分支位置"><a href="#强制修改分支位置" class="headerlink" title="强制修改分支位置"></a>强制修改分支位置</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git branch -f 分支名 HEAD~3</span><br></pre></td></tr></table></figure>
+
+<h5 id="撤销变更"><a href="#撤销变更" class="headerlink" title="撤销变更"></a>撤销变更</h5><p>本地撤销</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git reset HEAD</span><br></pre></td></tr></table></figure>
+
+<p>远程变更</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git revert HEAD</span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="远程仓库"><a href="#远程仓库" class="headerlink" title="远程仓库"></a>远程仓库</h4><h5 id="复制远程仓库"><a href="#复制远程仓库" class="headerlink" title="复制远程仓库"></a>复制远程仓库</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone</span><br></pre></td></tr></table></figure>
+
+<h5 id="拉取远程仓库的更新-默认使用merge合并"><a href="#拉取远程仓库的更新-默认使用merge合并" class="headerlink" title="拉取远程仓库的更新:默认使用merge合并"></a>拉取远程仓库的更新:默认使用merge合并</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git pull</span><br></pre></td></tr></table></figure>
+
+<h5 id="推送更新到远程仓库"><a href="#推送更新到远程仓库" class="headerlink" title="推送更新到远程仓库"></a>推送更新到远程仓库</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git push</span><br></pre></td></tr></table></figure>
+
+<h5 id="避免本地仓库与远程仓库不同步，更新时先拉取后推送"><a href="#避免本地仓库与远程仓库不同步，更新时先拉取后推送" class="headerlink" title="避免本地仓库与远程仓库不同步，更新时先拉取后推送"></a>避免本地仓库与远程仓库不同步，更新时先拉取后推送</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git pull --rebase push</span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="推荐："><a href="#推荐：" class="headerlink" title="推荐："></a>推荐：</h4><p>Learn Git Branching <a href="https://oschina.gitee.io/learn-git-branching/" target="_blank" rel="noopener">https://oschina.gitee.io/learn-git-branching/</a> 。该网站可以方便的演示基本的git操作，讲解得明明白白。每一个基本命令的作用和结果。</p>
+
       
     </div>
     
     
     
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/git/" rel="tag"># git</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2020/07/20/LeetCode-21-%E5%90%88%E5%B9%B6%E4%B8%A4%E4%B8%AA%E6%9C%89%E5%BA%8F%E9%93%BE%E8%A1%A8/" rel="next" title="LeetCode 21.合并两个有序链表">
+                <i class="fa fa-chevron-left"></i> LeetCode 21.合并两个有序链表
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
   </div>
 
 
@@ -363,8 +537,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -445,6 +628,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#Git-与其他版本管理系统的主要区别"><span class="nav-number">1.</span> <span class="nav-text">Git 与其他版本管理系统的主要区别</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#本地仓库"><span class="nav-number">2.</span> <span class="nav-text">本地仓库</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#获取git仓库"><span class="nav-number">2.1.</span> <span class="nav-text">获取git仓库</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#对文件重命名-："><span class="nav-number">2.2.</span> <span class="nav-text">对文件重命名 ：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#创建分支"><span class="nav-number">2.3.</span> <span class="nav-text">创建分支</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#切换到分支-记录"><span class="nav-number">2.4.</span> <span class="nav-text">切换到分支&#x2F;记录</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#分支合并两种方法："><span class="nav-number">2.5.</span> <span class="nav-text">分支合并两种方法：</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#Merge：该方法合并会创建一个新的节点，该节点继承合并的两个节点的所有记录。"><span class="nav-number">2.5.1.</span> <span class="nav-text">Merge：该方法合并会创建一个新的节点，该节点继承合并的两个节点的所有记录。</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#rebase：该方法将原分支的记录创建一个副本移到待合并的分支的顶端，是记录树只有一条。"><span class="nav-number">2.5.2.</span> <span class="nav-text">rebase：该方法将原分支的记录创建一个副本移到待合并的分支的顶端，是记录树只有一条。</span></a></li></ol></li><li class="nav-item nav-level-5"><a class="nav-link" href="#相对引用：-相当于往上移动一个记录，-4向上移动4个记录"><span class="nav-number">2.6.</span> <span class="nav-text">相对引用：^相当于往上移动一个记录，~4向上移动4个记录</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#强制修改分支位置"><span class="nav-number">2.7.</span> <span class="nav-text">强制修改分支位置</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#撤销变更"><span class="nav-number">2.8.</span> <span class="nav-text">撤销变更</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#远程仓库"><span class="nav-number">3.</span> <span class="nav-text">远程仓库</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#复制远程仓库"><span class="nav-number">3.1.</span> <span class="nav-text">复制远程仓库</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#拉取远程仓库的更新-默认使用merge合并"><span class="nav-number">3.2.</span> <span class="nav-text">拉取远程仓库的更新:默认使用merge合并</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#推送更新到远程仓库"><span class="nav-number">3.3.</span> <span class="nav-text">推送更新到远程仓库</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#避免本地仓库与远程仓库不同步，更新时先拉取后推送"><span class="nav-number">3.4.</span> <span class="nav-text">避免本地仓库与远程仓库不同步，更新时先拉取后推送</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#推荐："><span class="nav-number">4.</span> <span class="nav-text">推荐：</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
