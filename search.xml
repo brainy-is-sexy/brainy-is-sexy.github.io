@@ -187,7 +187,7 @@
       </categories>
       <tags>
         <tag>Java</tag>
-        <tag>算法</tag>
+        <tag>位运算</tag>
       </tags>
   </entry>
   <entry>
@@ -211,7 +211,7 @@
       </categories>
       <tags>
         <tag>Java</tag>
-        <tag>算法</tag>
+        <tag>摩尔投票</tag>
       </tags>
   </entry>
   <entry>
@@ -236,7 +236,7 @@
       </categories>
       <tags>
         <tag>Java</tag>
-        <tag>算法</tag>
+        <tag>二叉树</tag>
       </tags>
   </entry>
   <entry>
@@ -263,7 +263,7 @@
       </categories>
       <tags>
         <tag>Java</tag>
-        <tag>算法</tag>
+        <tag>链表</tag>
       </tags>
   </entry>
   <entry>
@@ -381,7 +381,7 @@
       </categories>
       <tags>
         <tag>Java</tag>
-        <tag>算法</tag>
+        <tag>双指针法</tag>
       </tags>
   </entry>
   <entry>
@@ -414,7 +414,7 @@
       </categories>
       <tags>
         <tag>Java</tag>
-        <tag>算法</tag>
+        <tag>hashmap</tag>
       </tags>
   </entry>
   <entry>
@@ -432,7 +432,7 @@
       </categories>
       <tags>
         <tag>Java</tag>
-        <tag>算法</tag>
+        <tag>辅助栈</tag>
       </tags>
   </entry>
   <entry>
@@ -463,7 +463,7 @@
       </categories>
       <tags>
         <tag>Java</tag>
-        <tag>算法</tag>
+        <tag>回溯算法</tag>
       </tags>
   </entry>
   <entry>
@@ -491,7 +491,7 @@
       </categories>
       <tags>
         <tag>Java</tag>
-        <tag>算法</tag>
+        <tag>动态规划</tag>
       </tags>
   </entry>
   <entry>
@@ -515,7 +515,34 @@
       </categories>
       <tags>
         <tag>Java</tag>
-        <tag>算法</tag>
+        <tag>动态规划</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>LeetCode 64.最小路径和</title>
+    <url>/2020/08/02/LeetCode-64-%E6%9C%80%E5%B0%8F%E8%B7%AF%E5%BE%84%E5%92%8C/</url>
+    <content><![CDATA[<hr>
+<a id="more"></a>
+
+<h4 id="方法：动态规划"><a href="#方法：动态规划" class="headerlink" title="方法：动态规划"></a>方法：动态规划</h4><h5 id="状态定义："><a href="#状态定义：" class="headerlink" title="状态定义："></a>状态定义：</h5><p>设 dp 为大小 m×n 矩阵，其中 dp[i][j]的值代表直到走到 (i,j) 的最小路径和。</p>
+<p>题目要求，只能向右或向下走，换句话说，当前单元格(i,j) 只能从左方单元格 (i-1,j)或上方单元格 (i,j-1) 走到，因此只需要考虑矩阵左边界和上边界。</p>
+<p>具体分为以下 4 种情况：</p>
+<p><strong>当左边和上边都不是矩阵边界时：</strong></p>
+<p><strong>当只有左边是矩阵边界时：</strong></p>
+<p><strong>当只有上边是矩阵边界时：</strong></p>
+<p><strong>当左边和上边都是矩阵边界时：</strong></p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">minPathSum</span><span class="params">(<span class="keyword">int</span>[][] grid)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; grid.length; i++) &#123;</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; grid[<span class="number">0</span>].length; j++) &#123;</span><br><span class="line">                <span class="keyword">if</span>(i == <span class="number">0</span> &amp;&amp; j == <span class="number">0</span>) <span class="keyword">continue</span>;</span><br><span class="line">                <span class="keyword">else</span> <span class="keyword">if</span>(i == <span class="number">0</span>)  grid[i][j] = grid[i][j - <span class="number">1</span>] + grid[i][j];</span><br><span class="line">                <span class="keyword">else</span> <span class="keyword">if</span>(j == <span class="number">0</span>)  grid[i][j] = grid[i - <span class="number">1</span>][j] + grid[i][j];</span><br><span class="line">                <span class="keyword">else</span> grid[i][j] = Math.min(grid[i - <span class="number">1</span>][j], grid[i][j - <span class="number">1</span>]) + grid[i][j];</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> grid[grid.length - <span class="number">1</span>][grid[<span class="number">0</span>].length - <span class="number">1</span>];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h5 id="复杂度分析："><a href="#复杂度分析：" class="headerlink" title="复杂度分析："></a>复杂度分析：</h5><p>时间复杂度 O(M \times N)O(M×N) ： 遍历整个 gridgrid 矩阵元素。<br>空间复杂度 O(1)O(1) ： 直接修改原矩阵，不使用额外空间。</p>
+]]></content>
+      <categories>
+        <category>LeetCode</category>
+      </categories>
+      <tags>
+        <tag>Java</tag>
+        <tag>动态规划</tag>
       </tags>
   </entry>
 </search>
