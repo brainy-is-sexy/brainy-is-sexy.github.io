@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2020-08-02T14:15:19.472Z</updated>
+  <updated>2020-08-04T13:50:50.947Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>剑指offer 27.二叉树的镜像</title>
+    <link href="http://yoursite.com/2020/08/04/%E5%89%91%E6%8C%87offer-27-%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E9%95%9C%E5%83%8F/"/>
+    <id>http://yoursite.com/2020/08/04/%E5%89%91%E6%8C%87offer-27-%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E9%95%9C%E5%83%8F/</id>
+    <published>2020-08-04T13:48:49.000Z</published>
+    <updated>2020-08-04T13:50:50.947Z</updated>
+    
+    <content type="html"><![CDATA[<hr><a id="more"></a><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line"><span class="function"><span class="keyword">public</span> TreeNode <span class="title">invertTree</span><span class="params">(TreeNode root)</span> </span>&#123;</span><br><span class="line"><span class="keyword">if</span>(root==<span class="keyword">null</span>) &#123;</span><br><span class="line"><span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//将二叉树中的节点逐层放入队列中，再迭代处理队列中的元素</span></span><br><span class="line">LinkedList&lt;TreeNode&gt; queue = <span class="keyword">new</span> LinkedList&lt;TreeNode&gt;();</span><br><span class="line">queue.add(root);</span><br><span class="line"><span class="keyword">while</span>(!queue.isEmpty()) &#123;</span><br><span class="line"><span class="comment">//每次都从队列中拿一个节点，并交换这个节点的左右子树</span></span><br><span class="line">TreeNode tmp = queue.poll();</span><br><span class="line">TreeNode left = tmp.left;</span><br><span class="line">tmp.left = tmp.right;</span><br><span class="line">tmp.right = left;</span><br><span class="line"><span class="comment">//如果当前节点的左子树不为空，则放入队列等待后续处理</span></span><br><span class="line"><span class="keyword">if</span>(tmp.left!=<span class="keyword">null</span>) &#123;</span><br><span class="line">queue.add(tmp.left);</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//如果当前节点的右子树不为空，则放入队列等待后续处理</span></span><br><span class="line"><span class="keyword">if</span>(tmp.right!=<span class="keyword">null</span>) &#123;</span><br><span class="line">queue.add(tmp.right);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//返回处理完的根节点</span></span><br><span class="line"><span class="keyword">return</span> root;</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      &lt;hr&gt;
+    
+    </summary>
+    
+    
+      <category term="剑指offer" scheme="http://yoursite.com/categories/%E5%89%91%E6%8C%87offer/"/>
+    
+    
+      <category term="Java" scheme="http://yoursite.com/tags/Java/"/>
+    
+      <category term="二叉树" scheme="http://yoursite.com/tags/%E4%BA%8C%E5%8F%89%E6%A0%91/"/>
+    
+  </entry>
   
   <entry>
     <title>LeetCode 64.最小路径和</title>
