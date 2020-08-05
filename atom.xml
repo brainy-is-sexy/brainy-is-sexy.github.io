@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2020-08-04T13:50:50.947Z</updated>
+  <updated>2020-08-05T09:16:39.859Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,52 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>什么是红黑树</title>
+    <link href="http://yoursite.com/2020/08/05/%E4%BB%80%E4%B9%88%E6%98%AF%E7%BA%A2%E9%BB%91%E6%A0%91/"/>
+    <id>http://yoursite.com/2020/08/05/%E4%BB%80%E4%B9%88%E6%98%AF%E7%BA%A2%E9%BB%91%E6%A0%91/</id>
+    <published>2020-08-05T09:11:26.000Z</published>
+    <updated>2020-08-05T09:16:39.859Z</updated>
+    
+    <content type="html"><![CDATA[<hr><a id="more"></a><h4 id="二叉查找树（BST）"><a href="#二叉查找树（BST）" class="headerlink" title="二叉查找树（BST）"></a>二叉查找树（BST）</h4><p>1.<strong>左</strong>子树上所有结点的值均<strong>小于或等于</strong>它的根结点的值。</p><p>2.<strong>右</strong>子树上所有结点的值均<strong>大于或等于</strong>它的根结点的值。</p><p>3.左、右子树也分别为二叉排序树。</p><p>下图中这棵树，就是一颗典型的二叉查找树：</p><p><img src="https://user-gold-cdn.xitu.io/2017/12/6/1602b600eb27d6ef?imageView2/0/w/1280/h/960/format/webp/ignore-error/1" alt="img"></p><h5 id="二叉查找树的缺陷"><a href="#二叉查找树的缺陷" class="headerlink" title="二叉查找树的缺陷"></a>二叉查找树的缺陷</h5><p><img src="https://user-gold-cdn.xitu.io/2017/12/6/1602b6014331f371?imageView2/0/w/1280/h/960/format/webp/ignore-error/1" alt="img"></p><h4 id="红黑树"><a href="#红黑树" class="headerlink" title="红黑树"></a>红黑树</h4><p>1.节点是红色或黑色。</p><p>2.根节点是黑色。</p><p>3.每个叶子节点都是黑色的空节点（NIL节点）。</p><p>4 每个红色节点的两个子节点都是黑色。(从每个叶子到根的所有路径上不能有两个连续的红色节点)</p><p>5.从任一节点到其每个叶子的所有路径都包含相同数目的黑色节点。</p><p>下图中这棵树，就是一颗典型的红黑树：</p><p><img src="https://user-gold-cdn.xitu.io/2017/12/6/1602b6016e143cf3?imageView2/0/w/1280/h/960/format/webp/ignore-error/1" alt="img"></p><p><strong>变色：</strong></p><p>为了重新符合红黑树的规则，尝试把红色节点变为黑色，或者把黑色节点变为红色。</p><p>下图所表示的是红黑树的一部分，需要注意节点25并非根节点。因为节点21和节点22连续出现了红色，不符合规则4，所以把节点22从红色变成黑色：</p><p><img src="https://user-gold-cdn.xitu.io/2017/12/6/1602b602995465b0?imageView2/0/w/1280/h/960/format/webp/ignore-error/1" alt="img"></p><p>但这样并不算完，因为凭空多出的黑色节点打破了规则5，所以发生连锁反应，需要继续把节点25从黑色变成红色：</p><p><img src="https://user-gold-cdn.xitu.io/2017/12/6/1602b6021ca38237?imageView2/0/w/1280/h/960/format/webp/ignore-error/1" alt="img"></p><p>此时仍然没有结束，因为节点25和节点27又形成了两个连续的红色节点，需要继续把节点27从红色变成黑色：</p><p><img src="https://user-gold-cdn.xitu.io/2017/12/6/1602b602acf13b5d?imageView2/0/w/1280/h/960/format/webp/ignore-error/1" alt="img"></p><p><strong>左旋转：</strong></p><p><strong>逆时针</strong>旋转红黑树的两个节点，使得父节点被自己的右孩子取代，而自己成为自己的左孩子。说起来很怪异，大家看下图：</p><p><img src="https://user-gold-cdn.xitu.io/2017/12/6/1602b60230926ead?imageView2/0/w/1280/h/960/format/webp/ignore-error/1" alt="img"></p><p>图中，身为右孩子的Y取代了X的位置，而X变成了自己的左孩子。此为左旋转。</p><p><strong>右旋转：</strong></p><p><strong>顺时针</strong>旋转红黑树的两个节点，使得父节点被自己的左孩子取代，而自己成为自己的右孩子。大家看下图：</p><p><img src="https://user-gold-cdn.xitu.io/2017/12/6/1602b6024ce2b0c4?imageView2/0/w/1280/h/960/format/webp/ignore-error/1" alt="img"></p><p>图中，身为左孩子的Y取代了X的位置，而X变成了自己的右孩子。此为右旋转。</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;hr&gt;
+    
+    </summary>
+    
+    
+      <category term="数据结构" scheme="http://yoursite.com/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
+    
+    
+      <category term="二叉树" scheme="http://yoursite.com/tags/%E4%BA%8C%E5%8F%89%E6%A0%91/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>BFS及DFS的Java实现</title>
+    <link href="http://yoursite.com/2020/08/05/BFS%E5%8F%8ADFS%E7%9A%84Java%E5%AE%9E%E7%8E%B0/"/>
+    <id>http://yoursite.com/2020/08/05/BFS%E5%8F%8ADFS%E7%9A%84Java%E5%AE%9E%E7%8E%B0/</id>
+    <published>2020-08-05T09:02:37.000Z</published>
+    <updated>2020-08-05T09:05:41.546Z</updated>
+    
+    <content type="html"><![CDATA[<hr><a id="more"></a><h2 id="BFS"><a href="#BFS" class="headerlink" title="BFS"></a>BFS</h2><p><img src="https://img-blog.csdnimg.cn/20181219152849568.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0dlbmUxOTk0,size_16,color_FFFFFF,t_70" alt="img"></p><p>  根据上图就可以很清晰的理解出BFS的概念，即一层一层的遍历。在使用BFS解决问题的时候最先想到的方式应该是<strong>队列（Queue，FIFO）</strong></p><p>  其主要思想是从起始点开始，将其邻近的所有顶点都加到一个队列（FIFO）中去，然后标记下这些顶点离起始顶点的距离为1.最后将起始顶点标记为已访问，今后就不会再访问。然后再从队列中取出最先进队的顶点A，也取出其周边邻近节点，加入队列末尾，最后离开这个顶点A。依次下去，直到队列为空为止。从上面描述的过程我们知道每个顶点被访问的次数最多一次（已访问的节点不会再访问）。</p><p>代码：</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">BFSWithQueue</span><span class="params">(TreeNode root)</span> </span>&#123;</span><br><span class="line">    Queue&lt;TreeNode&gt; queue = <span class="keyword">new</span> LinkedList&lt;&gt;();</span><br><span class="line">    <span class="keyword">if</span> (root != <span class="keyword">null</span>)</span><br><span class="line">        queue.add(root);</span><br><span class="line">    <span class="keyword">while</span> (!queue.isEmpty()) &#123;</span><br><span class="line">        TreeNode treeNode = queue.poll();</span><br><span class="line"> </span><br><span class="line">        <span class="comment">//在这里处理遍历到的TreeNode节点</span></span><br><span class="line"> </span><br><span class="line">        <span class="keyword">if</span> (treeNode.left != <span class="keyword">null</span>)</span><br><span class="line">            queue.add(treeNode.left);</span><br><span class="line">        <span class="keyword">if</span> (treeNode.right != <span class="keyword">null</span>)</span><br><span class="line">            queue.add(treeNode.right);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h2 id="DFS"><a href="#DFS" class="headerlink" title="DFS"></a>DFS</h2><p><img src="https://img-blog.csdnimg.cn/20181219152754628.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0dlbmUxOTk0,size_16,color_FFFFFF,t_70" alt="img"></p><p>上图可以看出DFS是如何工作的，使用DFS解决问题时最先想到的应该是<strong>递归和栈（Stack）</strong></p><p>DFS是从起始顶点开始，递归访问其所有邻近节点，比如A节点是其第一个邻近节点，而B节点又是A的一个邻近节点，则DFS访问A节点后再访问B节点，如果B节点有未访问的邻近节点的话将继续访问其邻近节点，否则继续访问A的未访问邻近节点，当所有从A节点出去的路径都访问完之后，继续递归访问除A以外未被访问的邻近节点。</p><p>使用递归实现DFS遍历二叉树：（优先选择）</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//DFS递归实现</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">DFSWithRecursion</span><span class="params">(TreeNode root)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (root == <span class="keyword">null</span>)</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line"> </span><br><span class="line">    <span class="comment">//在这里处理遍历到的TreeNode节点</span></span><br><span class="line">        </span><br><span class="line">    <span class="keyword">if</span> (root.left != <span class="keyword">null</span>)</span><br><span class="line">        DFSWithRecursion(root.left);</span><br><span class="line">    <span class="keyword">if</span> (root.right != <span class="keyword">null</span>)</span><br><span class="line">        DFSWithRecursion(root.right);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>使用Stack实现DFS</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment">//DFS的迭代实现版本（Stack）</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">DFSWithStack</span><span class="params">(TreeNode root)</span> </span>&#123;</span><br><span class="line">     <span class="keyword">if</span> (root == <span class="keyword">null</span>)</span><br><span class="line">         <span class="keyword">return</span>;</span><br><span class="line">     Stack&lt;TreeNode&gt; stack = <span class="keyword">new</span> Stack&lt;&gt;();</span><br><span class="line">     stack.push(root);</span><br><span class="line"> </span><br><span class="line">     <span class="keyword">while</span> (!stack.isEmpty()) &#123;</span><br><span class="line">         TreeNode treeNode = stack.pop();</span><br><span class="line"> </span><br><span class="line">         <span class="comment">//在这里处理遍历到的TreeNode</span></span><br><span class="line">             </span><br><span class="line">         <span class="keyword">if</span> (treeNode.right != <span class="keyword">null</span>)</span><br><span class="line">             stack.push(treeNode.right);</span><br><span class="line"> </span><br><span class="line">         <span class="keyword">if</span> (treeNode.left != <span class="keyword">null</span>)</span><br><span class="line">             stack.push(treeNode.left);</span><br><span class="line">     &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      &lt;hr&gt;
+    
+    </summary>
+    
+    
+      <category term="数据结构" scheme="http://yoursite.com/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
+    
+    
+      <category term="二叉树" scheme="http://yoursite.com/tags/%E4%BA%8C%E5%8F%89%E6%A0%91/"/>
+    
+  </entry>
   
   <entry>
     <title>剑指offer 27.二叉树的镜像</title>

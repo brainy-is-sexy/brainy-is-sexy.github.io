@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Java," />
+  <meta name="keywords" content="二叉树," />
 
 
 
@@ -84,17 +84,17 @@
 
 
 <meta property="og:type" content="article">
-<meta property="og:title" content="Java位运算">
-<meta property="og:url" content="http://yoursite.com/2020/07/19/Java%E4%BD%8D%E8%BF%90%E7%AE%97/index.html">
+<meta property="og:title" content="BFS及DFS的Java实现">
+<meta property="og:url" content="http://yoursite.com/2020/08/05/BFS%E5%8F%8ADFS%E7%9A%84Java%E5%AE%9E%E7%8E%B0/index.html">
 <meta property="og:site_name" content="brainy is the new sexy">
-<meta property="og:image" content="https://img-blog.csdn.net/20161012133936660?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQv/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/Center">
-<meta property="og:image" content="https://img-blog.csdn.net/20161012133940950?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQv/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/Center">
-<meta property="article:published_time" content="2020-07-19T09:39:00.000Z">
-<meta property="article:modified_time" content="2020-07-19T09:58:26.653Z">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20181219152849568.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0dlbmUxOTk0,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20181219152754628.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0dlbmUxOTk0,size_16,color_FFFFFF,t_70">
+<meta property="article:published_time" content="2020-08-05T09:02:37.000Z">
+<meta property="article:modified_time" content="2020-08-05T09:05:41.546Z">
 <meta property="article:author" content="Error">
-<meta property="article:tag" content="Java">
+<meta property="article:tag" content="二叉树">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://img-blog.csdn.net/20161012133936660?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQv/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/Center">
+<meta name="twitter:image" content="https://img-blog.csdnimg.cn/20181219152849568.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0dlbmUxOTk0,size_16,color_FFFFFF,t_70">
 
 
 
@@ -124,13 +124,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2020/07/19/Java位运算/"/>
+  <link rel="canonical" href="http://yoursite.com/2020/08/05/BFS及DFS的Java实现/"/>
 
 
 
 
 
-  <title>Java位运算 | brainy is the new sexy</title>
+  <title>BFS及DFS的Java实现 | brainy is the new sexy</title>
   
 
 
@@ -311,7 +311,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/07/19/Java%E4%BD%8D%E8%BF%90%E7%AE%97/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/08/05/BFS%E5%8F%8ADFS%E7%9A%84Java%E5%AE%9E%E7%8E%B0/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Error">
@@ -328,7 +328,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Java位运算</h1>
+          <h1 class="post-title" itemprop="name headline">BFS及DFS的Java实现</h1>
         
 
         <div class="post-meta">
@@ -340,8 +340,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-07-19T17:39:00+08:00">
-                2020-07-19
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-08-05T17:02:37+08:00">
+                2020-08-05
               </time>
             
 
@@ -363,8 +363,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Java%E5%9F%BA%E7%A1%80/" itemprop="url" rel="index">
-                    <span itemprop="name">Java基础</span>
+                  <a href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" itemprop="url" rel="index">
+                    <span itemprop="name">数据结构</span>
                   </a>
                 </span>
 
@@ -403,113 +403,25 @@
         <hr>
 <a id="more"></a>
 
-<h2 id="位运算符"><a href="#位运算符" class="headerlink" title="位运算符"></a>位运算符</h2><h4 id="1-1-Java支持的位运算符"><a href="#1-1-Java支持的位运算符" class="headerlink" title="1.1 Java支持的位运算符"></a>1.1 Java支持的位运算符</h4><p>&amp;：按位与</p>
-<p>|：按位或</p>
-<p>~：按位非</p>
-<p>^：按位异或</p>
-<p>&lt;&lt;：左位移</p>
-<p>&gt;&gt;：右位移运算符</p>
-<p>&gt;&gt;&gt;：无符号右移运算符</p>
-<h4 id=""><a href="#" class="headerlink" title=""></a></h4><h4 id="1-2-按位与（-amp-）"><a href="#1-2-按位与（-amp-）" class="headerlink" title="1.2  按位与（&amp;）"></a>1.2  按位与（&amp;）</h4><table>
-<thead>
-<tr>
-<th>操作数1</th>
-<th>0</th>
-<th>0</th>
-<th>1</th>
-<th>1</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>操作数2</td>
-<td>0</td>
-<td>1</td>
-<td>0</td>
-<td>1</td>
-</tr>
-<tr>
-<td>按位与</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>1</td>
-</tr>
-</tbody></table>
-<p>规则总结：只有两个操作数对应位同为1时，结果为1，其余全为0. （或者是只要有一个操作数为0，结果就为0）</p>
-<h4 id="1-3-按位或（-）"><a href="#1-3-按位或（-）" class="headerlink" title="1.3  按位或（|）"></a>1.3  按位或（|）</h4><table>
-<thead>
-<tr>
-<th>操作数1</th>
-<th>0</th>
-<th>0</th>
-<th>1</th>
-<th>1</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>操作数2</td>
-<td>0</td>
-<td>1</td>
-<td>0</td>
-<td>1</td>
-</tr>
-<tr>
-<td>按位或</td>
-<td>0</td>
-<td>1</td>
-<td>1</td>
-<td>1</td>
-</tr>
-</tbody></table>
-<p>规则总结：只有两个操作数对应位同为0时，结果为0，其余全为1.（或者是只要有一个操作数为1，结果就为1）。</p>
-<h4 id="1-4-按位非（-）"><a href="#1-4-按位非（-）" class="headerlink" title="1.4  按位非（~）"></a>1.4  按位非（~）</h4><table>
-<thead>
-<tr>
-<th>操作数1</th>
-<th>0</th>
-<th>0</th>
-<th>1</th>
-<th align="center">1</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>按位非</td>
-<td>1</td>
-<td>1</td>
-<td>0</td>
-<td align="center">0</td>
-</tr>
-</tbody></table>
-<h4 id="1-3-按位异或（-）"><a href="#1-3-按位异或（-）" class="headerlink" title="1.3  按位异或（^）"></a>1.3  按位异或（^）</h4><table>
-<thead>
-<tr>
-<th>操作数1</th>
-<th>0</th>
-<th>0</th>
-<th>1</th>
-<th>1</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>操作数2</td>
-<td>0</td>
-<td>1</td>
-<td>0</td>
-<td>1</td>
-</tr>
-<tr>
-<td>按位异或</td>
-<td>0</td>
-<td>1</td>
-<td>1</td>
-<td>0</td>
-</tr>
-</tbody></table>
-<p>规则总结：相同为0，异：1.</p>
-<h4 id="1-6-左位移（-lt-lt-）"><a href="#1-6-左位移（-lt-lt-）" class="headerlink" title="1.6 左位移（&lt;&lt;）"></a>1.6 左位移（&lt;&lt;）</h4><p>算术左移（&lt;&lt;）: 符号位不变，低位补0。如：2&lt;&lt;2结果为8。</p>
-<p><img src="https://img-blog.csdn.net/20161012133936660?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQv/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/Center" alt="img"></p>
-<h4 id="1-7-右位移（-gt-gt-）"><a href="#1-7-右位移（-gt-gt-）" class="headerlink" title="1.7 右位移（&gt;&gt;）"></a>1.7 右位移（&gt;&gt;）</h4><p>低位溢出，符号位不变，并用符号位补溢出的高位。如：-6&gt;&gt;2结果为-2。</p>
-<p><img src="https://img-blog.csdn.net/20161012133940950?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQv/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/Center" alt="img"></p>
+<h2 id="BFS"><a href="#BFS" class="headerlink" title="BFS"></a>BFS</h2><p><img src="https://img-blog.csdnimg.cn/20181219152849568.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0dlbmUxOTk0,size_16,color_FFFFFF,t_70" alt="img"></p>
+<p>  根据上图就可以很清晰的理解出BFS的概念，即一层一层的遍历。在使用BFS解决问题的时候最先想到的方式应该是<strong>队列（Queue，FIFO）</strong></p>
+<p>  其主要思想是从起始点开始，将其邻近的所有顶点都加到一个队列（FIFO）中去，然后标记下这些顶点离起始顶点的距离为1.最后将起始顶点标记为已访问，今后就不会再访问。然后再从队列中取出最先进队的顶点A，也取出其周边邻近节点，加入队列末尾，最后离开这个顶点A。依次下去，直到队列为空为止。从上面描述的过程我们知道每个顶点被访问的次数最多一次（已访问的节点不会再访问）。</p>
+<p>代码：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">BFSWithQueue</span><span class="params">(TreeNode root)</span> </span>&#123;</span><br><span class="line">    Queue&lt;TreeNode&gt; queue = <span class="keyword">new</span> LinkedList&lt;&gt;();</span><br><span class="line">    <span class="keyword">if</span> (root != <span class="keyword">null</span>)</span><br><span class="line">        queue.add(root);</span><br><span class="line">    <span class="keyword">while</span> (!queue.isEmpty()) &#123;</span><br><span class="line">        TreeNode treeNode = queue.poll();</span><br><span class="line"> </span><br><span class="line">        <span class="comment">//在这里处理遍历到的TreeNode节点</span></span><br><span class="line"> </span><br><span class="line">        <span class="keyword">if</span> (treeNode.left != <span class="keyword">null</span>)</span><br><span class="line">            queue.add(treeNode.left);</span><br><span class="line">        <span class="keyword">if</span> (treeNode.right != <span class="keyword">null</span>)</span><br><span class="line">            queue.add(treeNode.right);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="DFS"><a href="#DFS" class="headerlink" title="DFS"></a>DFS</h2><p><img src="https://img-blog.csdnimg.cn/20181219152754628.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0dlbmUxOTk0,size_16,color_FFFFFF,t_70" alt="img"></p>
+<p>上图可以看出DFS是如何工作的，使用DFS解决问题时最先想到的应该是<strong>递归和栈（Stack）</strong></p>
+<p>DFS是从起始顶点开始，递归访问其所有邻近节点，比如A节点是其第一个邻近节点，而B节点又是A的一个邻近节点，则DFS访问A节点后再访问B节点，如果B节点有未访问的邻近节点的话将继续访问其邻近节点，否则继续访问A的未访问邻近节点，当所有从A节点出去的路径都访问完之后，继续递归访问除A以外未被访问的邻近节点。</p>
+<p>使用递归实现DFS遍历二叉树：（优先选择）</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//DFS递归实现</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">DFSWithRecursion</span><span class="params">(TreeNode root)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (root == <span class="keyword">null</span>)</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line"> </span><br><span class="line">    <span class="comment">//在这里处理遍历到的TreeNode节点</span></span><br><span class="line">        </span><br><span class="line">    <span class="keyword">if</span> (root.left != <span class="keyword">null</span>)</span><br><span class="line">        DFSWithRecursion(root.left);</span><br><span class="line">    <span class="keyword">if</span> (root.right != <span class="keyword">null</span>)</span><br><span class="line">        DFSWithRecursion(root.right);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<p>使用Stack实现DFS</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment">//DFS的迭代实现版本（Stack）</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">DFSWithStack</span><span class="params">(TreeNode root)</span> </span>&#123;</span><br><span class="line">     <span class="keyword">if</span> (root == <span class="keyword">null</span>)</span><br><span class="line">         <span class="keyword">return</span>;</span><br><span class="line">     Stack&lt;TreeNode&gt; stack = <span class="keyword">new</span> Stack&lt;&gt;();</span><br><span class="line">     stack.push(root);</span><br><span class="line"> </span><br><span class="line">     <span class="keyword">while</span> (!stack.isEmpty()) &#123;</span><br><span class="line">         TreeNode treeNode = stack.pop();</span><br><span class="line"> </span><br><span class="line">         <span class="comment">//在这里处理遍历到的TreeNode</span></span><br><span class="line">             </span><br><span class="line">         <span class="keyword">if</span> (treeNode.right != <span class="keyword">null</span>)</span><br><span class="line">             stack.push(treeNode.right);</span><br><span class="line"> </span><br><span class="line">         <span class="keyword">if</span> (treeNode.left != <span class="keyword">null</span>)</span><br><span class="line">             stack.push(treeNode.left);</span><br><span class="line">     &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 
       
     </div>
@@ -527,7 +439,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/Java/" rel="tag"># Java</a>
+            <a href="/tags/%E4%BA%8C%E5%8F%89%E6%A0%91/" rel="tag"># 二叉树</a>
           
         </div>
       
@@ -540,8 +452,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2020/07/09/%E4%BD%BF%E7%94%A8git%E4%B8%8A%E4%BC%A0%E6%9C%AC%E5%9C%B0%E4%BB%A3%E7%A0%81%E5%88%B0github%E4%BB%93%E5%BA%93/" rel="next" title="使用git上传本地代码到github仓库">
-                <i class="fa fa-chevron-left"></i> 使用git上传本地代码到github仓库
+              <a href="/2020/08/04/%E5%89%91%E6%8C%87offer-27-%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E9%95%9C%E5%83%8F/" rel="next" title="剑指offer 27.二叉树的镜像">
+                <i class="fa fa-chevron-left"></i> 剑指offer 27.二叉树的镜像
               </a>
             
           </div>
@@ -550,8 +462,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2020/07/19/LeetCode-136%EF%BC%9A%E5%8F%AA%E5%87%BA%E7%8E%B0%E4%B8%80%E6%AC%A1%E7%9A%84%E6%95%B0%E5%AD%97/" rel="prev" title="LeetCode 136.只出现一次的数字">
-                LeetCode 136.只出现一次的数字 <i class="fa fa-chevron-right"></i>
+              <a href="/2020/08/05/%E4%BB%80%E4%B9%88%E6%98%AF%E7%BA%A2%E9%BB%91%E6%A0%91/" rel="prev" title="什么是红黑树">
+                什么是红黑树 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -705,7 +617,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#位运算符"><span class="nav-number">1.</span> <span class="nav-text">位运算符</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-1-Java支持的位运算符"><span class="nav-number">1.0.1.</span> <span class="nav-text">1.1 Java支持的位运算符</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#"><span class="nav-number">1.0.2.</span> <span class="nav-text"></span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-2-按位与（-amp-）"><span class="nav-number">1.0.3.</span> <span class="nav-text">1.2  按位与（&amp;）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-3-按位或（-）"><span class="nav-number">1.0.4.</span> <span class="nav-text">1.3  按位或（|）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-4-按位非（-）"><span class="nav-number">1.0.5.</span> <span class="nav-text">1.4  按位非（~）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-3-按位异或（-）"><span class="nav-number">1.0.6.</span> <span class="nav-text">1.3  按位异或（^）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-6-左位移（-lt-lt-）"><span class="nav-number">1.0.7.</span> <span class="nav-text">1.6 左位移（&lt;&lt;）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-7-右位移（-gt-gt-）"><span class="nav-number">1.0.8.</span> <span class="nav-text">1.7 右位移（&gt;&gt;）</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#BFS"><span class="nav-number">1.</span> <span class="nav-text">BFS</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#DFS"><span class="nav-number">2.</span> <span class="nav-text">DFS</span></a></li></ol></div>
             
 
           </div>
