@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2020-08-13T09:05:16.145Z</updated>
+  <updated>2020-08-17T13:23:56.798Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>LeetCode 114.二叉树展开为链表</title>
+    <link href="http://yoursite.com/2020/08/17/LeetCode-114-%E4%BA%8C%E5%8F%89%E6%A0%91%E5%B1%95%E5%BC%80%E4%B8%BA%E9%93%BE%E8%A1%A8/"/>
+    <id>http://yoursite.com/2020/08/17/LeetCode-114-%E4%BA%8C%E5%8F%89%E6%A0%91%E5%B1%95%E5%BC%80%E4%B8%BA%E9%93%BE%E8%A1%A8/</id>
+    <published>2020-08-17T13:22:18.000Z</published>
+    <updated>2020-08-17T13:23:56.798Z</updated>
+    
+    <content type="html"><![CDATA[<hr><a id="more"></a><h4 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h4><p>可以发现展开的顺序其实就是二叉树的先序遍历。算法和 94 题中序遍历的 Morris 算法有些神似，我们需要两步完成这道题。</p><p>将左子树插入到右子树的地方<br>将原来的右子树接到左子树的最右边节点<br>考虑新的右子树的根节点，一直重复上边的过程，直到新的右子树为 null</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">flatten</span><span class="params">(TreeNode root)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">while</span> (root != <span class="keyword">null</span>) &#123; </span><br><span class="line">        <span class="comment">//左子树为 null，直接考虑下一个节点</span></span><br><span class="line">        <span class="keyword">if</span> (root.left == <span class="keyword">null</span>) &#123;</span><br><span class="line">            root = root.right;</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="comment">// 找左子树最右边的节点</span></span><br><span class="line">            TreeNode pre = root.left;</span><br><span class="line">            <span class="keyword">while</span> (pre.right != <span class="keyword">null</span>) &#123;</span><br><span class="line">                pre = pre.right;</span><br><span class="line">            &#125; </span><br><span class="line">            <span class="comment">//将原来的右子树接到左子树的最右边节点</span></span><br><span class="line">            pre.right = root.right;</span><br><span class="line">            <span class="comment">// 将左子树插入到右子树的地方</span></span><br><span class="line">            root.right = root.left;</span><br><span class="line">            root.left = <span class="keyword">null</span>;</span><br><span class="line">            <span class="comment">// 考虑下一个节点</span></span><br><span class="line">            root = root.right;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      &lt;hr&gt;
+    
+    </summary>
+    
+    
+      <category term="LeetCode" scheme="http://yoursite.com/categories/LeetCode/"/>
+    
+    
+      <category term="二叉树" scheme="http://yoursite.com/tags/%E4%BA%8C%E5%8F%89%E6%A0%91/"/>
+    
+      <category term="链表" scheme="http://yoursite.com/tags/%E9%93%BE%E8%A1%A8/"/>
+    
+  </entry>
   
   <entry>
     <title>HTTP相关知识</title>
@@ -474,29 +499,6 @@
       <category term="Java" scheme="http://yoursite.com/tags/Java/"/>
     
       <category term="算法" scheme="http://yoursite.com/tags/%E7%AE%97%E6%B3%95/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>LeetCode 11.盛最多水的容器</title>
-    <link href="http://yoursite.com/2020/07/23/11-%E7%9B%9B%E6%9C%80%E5%A4%9A%E6%B0%B4%E7%9A%84%E5%AE%B9%E5%99%A8/"/>
-    <id>http://yoursite.com/2020/07/23/11-%E7%9B%9B%E6%9C%80%E5%A4%9A%E6%B0%B4%E7%9A%84%E5%AE%B9%E5%99%A8/</id>
-    <published>2020-07-23T13:49:36.000Z</published>
-    <updated>2020-08-07T12:59:13.945Z</updated>
-    
-    <content type="html"><![CDATA[<hr><a id="more"></a><h4 id="方法：双指针法"><a href="#方法：双指针法" class="headerlink" title="方法：双指针法"></a>方法：双指针法</h4><p>我们先从题目中的示例开始，一步一步地解释双指针算法的过程。稍后再给出算法正确性的证明。</p><p>题目中的示例为：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[1, 8, 6, 2, 5, 4, 8, 3, 7]</span><br><span class="line"> ^                       ^</span><br></pre></td></tr></table></figure><p>在初始时，左右指针分别指向数组的左右两端，它们可以容纳的水量为 \min(1, 7) * 8 = 8min(1,7)∗8=8。</p><p>此时我们需要移动一个指针。移动哪一个呢？直觉告诉我们，应该移动对应数字较小的那个指针（即此时的左指针）。这是因为，由于容纳的水量是由</p><p>两个指针指向的数字中较小值 * 指针之间的距离两个指针指向的数字中较小值∗指针之间的距离</p><p>决定的。如果我们移动数字较大的那个指针，那么前者「两个指针指向的数字中较小值」不会增加，后者「指针之间的距离」会减小，那么这个乘积会减小。因此，我们移动数字较大的那个指针是不合理的。因此，我们移动 <strong>数字较小的那个指针</strong>。</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">maxArea</span><span class="params">(<span class="keyword">int</span>[] height)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> left=<span class="number">0</span>,right=height.length-<span class="number">1</span>;</span><br><span class="line">        <span class="keyword">int</span> re=<span class="number">0</span>;</span><br><span class="line">        <span class="keyword">while</span>(left&lt;right)&#123;</span><br><span class="line">            <span class="keyword">int</span> maxx=Math.min(height[left],height[right])*(right-left);</span><br><span class="line">            re=Math.max(maxx,re);</span><br><span class="line">            <span class="keyword">if</span>(height[left]&lt;=height[right])</span><br><span class="line">                left++;</span><br><span class="line">            <span class="keyword">else</span></span><br><span class="line">                right--;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> re;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p><strong>复杂度分析</strong></p><ul><li>时间复杂度：O(N)，双指针总计最多遍历整个数组一次。</li><li>空间复杂度：O(1)，只需要额外的常数级别的空间。</li></ul>]]></content>
-    
-    <summary type="html">
-    
-      &lt;hr&gt;
-    
-    </summary>
-    
-    
-      <category term="LeetCode" scheme="http://yoursite.com/categories/LeetCode/"/>
-    
-    
-      <category term="双指针法" scheme="http://yoursite.com/tags/%E5%8F%8C%E6%8C%87%E9%92%88%E6%B3%95/"/>
     
   </entry>
   
