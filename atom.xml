@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2020-08-17T13:23:56.798Z</updated>
+  <updated>2020-08-18T14:35:46.931Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,73 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>LeetCode 48.旋转图像</title>
+    <link href="http://yoursite.com/2020/08/18/LeetCode-48-%E6%97%8B%E8%BD%AC%E5%9B%BE%E5%83%8F/"/>
+    <id>http://yoursite.com/2020/08/18/LeetCode-48-%E6%97%8B%E8%BD%AC%E5%9B%BE%E5%83%8F/</id>
+    <published>2020-08-18T14:34:01.000Z</published>
+    <updated>2020-08-18T14:35:46.931Z</updated>
+    
+    <content type="html"><![CDATA[<hr><a id="more"></a><h4 id="方法-：转置加翻转"><a href="#方法-：转置加翻转" class="headerlink" title="方法 ：转置加翻转"></a>方法 ：转置加翻转</h4><p>最直接的想法是先转置矩阵，然后翻转每一行。这个简单的方法已经能达到最优的时间复杂度</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">rotate</span><span class="params">(<span class="keyword">int</span>[][] matrix)</span> </span>&#123;</span><br><span class="line">        <span class="comment">//先转置矩阵</span></span><br><span class="line">        <span class="keyword">int</span> n=matrix.length;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;n;i++)</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> j=i;j&lt;n;j++)&#123;</span><br><span class="line">                <span class="keyword">int</span> tmp=matrix[j][i];</span><br><span class="line">                matrix[j][i]=matrix[i][j];</span><br><span class="line">                matrix[i][j]=tmp;</span><br><span class="line">            &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="comment">//逐行翻转</span></span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;n;i++)</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">0</span>;j&lt;n/<span class="number">2</span>;j++)&#123;</span><br><span class="line">                <span class="keyword">int</span> tmp=matrix[i][j];</span><br><span class="line">                matrix[i][j]=matrix[i][n-<span class="number">1</span>-j];</span><br><span class="line">                matrix[i][n-<span class="number">1</span>-j]=tmp;</span><br><span class="line">            &#125;</span><br><span class="line">        </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><ul><li>时间复杂度：O(N^2)</li><li>空间复杂度：O(1)由于旋转操作是 <em>就地</em> 完成的。</li></ul>]]></content>
+    
+    <summary type="html">
+    
+      &lt;hr&gt;
+    
+    </summary>
+    
+    
+      <category term="LeetCode" scheme="http://yoursite.com/categories/LeetCode/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>内存管理与虚拟内存</title>
+    <link href="http://yoursite.com/2020/08/18/%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86/"/>
+    <id>http://yoursite.com/2020/08/18/%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86/</id>
+    <published>2020-08-18T13:49:48.000Z</published>
+    <updated>2020-08-18T13:54:38.080Z</updated>
+    
+    <content type="html"><![CDATA[<hr><a id="more"></a><h2 id="操作系统内存管理基础"><a href="#操作系统内存管理基础" class="headerlink" title="操作系统内存管理基础"></a>操作系统内存管理基础</h2><h3 id="内存管理介绍"><a href="#内存管理介绍" class="headerlink" title="内存管理介绍"></a>内存管理介绍</h3><p>操作系统的内存管理主要负责内存的分配与回收（malloc 函数：申请内存，free 函数：释放内存），另外地址转换也就是将逻辑地址转换成相应的物理地址等功能也是操作系统内存管理做的事情。</p><h3 id="常见的几种内存管理机制"><a href="#常见的几种内存管理机制" class="headerlink" title="常见的几种内存管理机制"></a>常见的几种内存管理机制</h3><p>简单分为<strong>连续分配管理方式</strong>和<strong>非连续分配管理方式</strong>这两种。连续分配管理方式是指为一个用户程序分配一个连续的内存空间，常见的如 <strong>块式管理</strong> 。同样地，非连续分配管理方式允许一个程序使用的内存分布在离散或者说不相邻的内存中，常见的如<strong>页式管理</strong> 和 <strong>段式管理</strong>。</p><ol><li><p><strong>块式管理</strong> ： 远古时代的计算机操系统的内存管理方式。将内存分为几个固定大小的块，每个块中只包含一个进程。如果程序运行需要内存的话，操作系统就分配给它一块，如果程序运行只需要很小的空间的话，分配的这块内存很大一部分几乎被浪费了。这些在每个块中未被利用的空间，我们称之为碎片。</p></li><li><p><strong>页式管理</strong> ：把主存分为大小相等且固定的一页一页的形式，页较小，相对相比于块式管理的划分力度更大，提高了内存利用率，减少了碎片。页式管理通过页表对应逻辑地址和物理地址。</p></li><li><p><strong>段式管理</strong> ： 页式管理虽然提高了内存利用率，但是页式管理其中的页实际并无任何实际意义。 段式管理把主存分为一段段的，每一段的空间又要比一页的空间小很多 。但是，最重要的是段是有实际意义的，每个段定义了一组逻辑信息，例如,有主程序段 MAIN、子程序段 X、数据段 D 及栈段 S 等。 段式管理通过段表对应逻辑地址和物理地址。</p><p>4.<strong>段页式管理机制</strong> ：段页式管理机制结合了段式管理和页式管理的优点。简单来说段页式管理机制就是把主存先分成若干段，每个段又分成若干页，也就是说 <strong>段页式管理机制</strong> 中段与段之间以及段的内部的都是离散的。</p></li></ol><h3 id="快表和多级页表"><a href="#快表和多级页表" class="headerlink" title="快表和多级页表"></a>快表和多级页表</h3><h4 id="快表"><a href="#快表" class="headerlink" title="快表"></a>快表</h4><p>为了解决虚拟地址到物理地址的转换速度，操作系统在 <strong>页表方案</strong> 基础之上引入了 <strong>快表</strong> 来加速虚拟地址到物理地址的转换。我们可以把块表理解为一种特殊的高速缓冲存储器（Cache），其中的内容是页表的一部分或者全部内容。作为页表的 Cache，它的作用与页表相似，但是提高了访问速率。由于采用页表做地址转换，读写内存数据时 CPU 要访问两次主存。有了快表，有时只要访问一次高速缓冲存储器，一次主存，这样可加速查找并提高指令执行速度。</p><p>使用快表之后的地址转换流程是这样的：</p><ol><li>根据虚拟地址中的页号查快表；</li><li>如果该页在快表中，直接从快表中读取相应的物理地址；</li><li>如果该页不在快表中，就访问内存中的页表，再从页表中得到物理地址，同时将页表中的该映射表项添加到快表中；</li><li>当快表填满后，又要登记新页时，就按照一定的淘汰策略淘汰掉快表中的一个页。</li></ol><h4 id="多级页表"><a href="#多级页表" class="headerlink" title="多级页表"></a>多级页表</h4><p>引入多级页表的主要目的是为了避免把全部页表一直放在内存中占用过多空间，特别是那些根本就不需要的页表就不需要保留在内存中。多级页表属于时间换空间的典型场景</p><h3 id="分页机制和分段机制的共同点和区别"><a href="#分页机制和分段机制的共同点和区别" class="headerlink" title="分页机制和分段机制的共同点和区别"></a>分页机制和分段机制的共同点和区别</h3><ol><li><p>共同点</p><ul><li>分页机制和分段机制都是为了提高内存利用率，较少内存碎片。</li><li>页和段都是离散存储的，所以两者都是离散分配内存的方式。但是，每个页和段中的内存是连续的。</li></ul></li><li><p>区别</p><ul><li>页的大小是固定的，由操作系统决定；而段的大小不固定，取决于我们当前运行的程序。</li><li>分页仅仅是为了满足操作系统内存管理的需求，而段是逻辑信息的单位，在程序中可以体现为代码段，数据段，能够更好满足用户的需要。</li></ul></li></ol><h3 id="逻辑-虚拟-地址和物理地址"><a href="#逻辑-虚拟-地址和物理地址" class="headerlink" title="逻辑(虚拟)地址和物理地址"></a>逻辑(虚拟)地址和物理地址</h3><p>我们编程一般只有可能和逻辑地址打交道，比如在 C 语言中，指针里面存储的数值就可以理解成为内存里的一个地址，这个地址也就是我们说的逻辑地址，逻辑地址由操作系统决定。物理地址指的是真实物理内存中地址，更具体一点来说就是内存地址寄存器中的地址。物理地址是内存单元真正的地址。</p><h2 id="虚拟内存"><a href="#虚拟内存" class="headerlink" title="虚拟内存"></a>虚拟内存</h2><h3 id="什么是虚拟内存-Virtual-Memory"><a href="#什么是虚拟内存-Virtual-Memory" class="headerlink" title="什么是虚拟内存(Virtual Memory)?"></a>什么是虚拟内存(Virtual Memory)?</h3><p>这个在我们平时使用电脑特别是 Windows 系统的时候太常见了。很多时候我们使用点开了很多占内存的软件，这些软件占用的内存可能已经远远超出了我们电脑本身具有的物理内存。<strong>为什么可以这样呢？</strong> 正是因为 <strong>虚拟内存</strong> 的存在，通过 <strong>虚拟内存</strong> 可以让程序可以拥有超过系统物理内存大小的可用内存空间。另外，<strong>虚拟内存为每个进程提供了一个一致的、私有的地址空间，它让每个进程产生了一种自己在独享主存的错觉（每个进程拥有一片连续完整的内存空间）</strong>。这样会更加有效地管理内存并减少出错。</p><p><strong>虚拟内存</strong>是计算机系统内存管理的一种技术，我们可以手动设置自己电脑的虚拟内存。不要单纯认为虚拟内存只是“使用硬盘空间来扩展内存“的技术。<strong>虚拟内存的重要意义是它定义了一个连续的虚拟地址空间</strong>，并且 <strong>把内存扩展到硬盘空间</strong>。推荐阅读：<a href="https://juejin.im/post/59f8691b51882534af254317" target="_blank" rel="noopener">《虚拟内存的那点事儿》</a></p><h3 id="局部性原理"><a href="#局部性原理" class="headerlink" title="局部性原理"></a>局部性原理</h3><p>局部性原理表现在以下两个方面：</p><ol><li><strong>时间局部性</strong> ：如果程序中的某条指令一旦执行，不久以后该指令可能再次执行；如果某数据被访问过，不久以后该数据可能再次被访问。产生时间局部性的典型原因，是由于在程序中存在着大量的循环操作。</li><li><strong>空间局部性</strong> ：一旦程序访问了某个存储单元，在不久之后，其附近的存储单元也将被访问，即程序在一段时间内所访问的地址，可能集中在一定的范围之内，这是因为指令通常是顺序存放、顺序执行的，数据也一般是以向量、数组、表等形式簇聚存储的。</li></ol><p>时间局部性是通过将近来使用的指令和数据保存到高速缓存存储器中，并使用高速缓存的层次结构实现。空间局部性通常是使用较大的高速缓存，并将预取机制集成到高速缓存控制逻辑中实现。虚拟内存技术实际上就是建立了 “内存一外存”的两级存储器的结构，利用局部性原理实现髙速缓存。</p><h3 id="虚拟存储器"><a href="#虚拟存储器" class="headerlink" title="虚拟存储器"></a>虚拟存储器</h3><p>基于局部性原理，在程序装入时，可以将程序的一部分装入内存，而将其他部分留在外存，就可以启动程序执行。由于外存往往比内存大很多，所以我们运行的软件的内存大小实际上是可以比计算机系统实际的内存大小大的。在程序执行过程中，当所访问的信息不在内存时，由操作系统将所需要的部分调入内存，然后继续执行程序。另一方面，操作系统将内存中暂时不使用的内容换到外存上，从而腾出空间存放将要调入内存的信息。这样，计算机好像为用户提供了一个比实际内存大的多的存储器——<strong>虚拟存储器</strong>。</p><p>实际上，我觉得虚拟内存同样是一种时间换空间的策略，你用 CPU 的计算时间，页的调入调出花费的时间，换来了一个虚拟的更大的空间来支持程序的运行。不得不感叹，程序世界几乎不是时间换空间就是空间换时间。</p><h3 id="页面置换算法"><a href="#页面置换算法" class="headerlink" title="页面置换算法"></a>页面置换算法</h3><p>地址映射过程中，若在页面中发现所要访问的页面不在内存中，则发生缺页中断 。</p><blockquote><p><strong>缺页中断</strong> 就是要访问的<strong>页</strong>不在主存，需要操作系统将其调入主存后再进行访问。 在这个时候，被内存映射的文件实际上成了一个分页交换文件。</p></blockquote><p>当发生缺页中断时，如果当前内存中并没有空闲的页面，操作系统就必须在内存选择一个页面将其移出内存，以便为即将调入的页面让出空间。用来选择淘汰哪一页的规则叫做页面置换算法，我们可以把页面置换算法看成是淘汰页面的规则。</p><ul><li><strong>OPT 页面置换算法（最佳页面置换算法）</strong> ：最佳(Optimal, OPT)置换算法所选择的被淘汰页面将是以后永不使用的，或者是在最长时间内不再被访问的页面,这样可以保证获得最低的缺页率。但由于人们目前无法预知进程在内存下的若千页面中哪个是未来最长时间内不再被访问的，因而该算法无法实现。一般作为衡量其他置换算法的方法。</li><li><strong>FIFO（First In First Out） 页面置换算法（先进先出页面置换算法）</strong> : 总是淘汰最先进入内存的页面，即选择在内存中驻留时间最久的页面进行淘汰。</li><li><strong>LRU （Least Currently Used）页面置换算法（最近最久未使用页面置换算法）</strong> ：LRU算法赋予每个页面一个访问字段，用来记录一个页面自上次被访问以来所经历的时间 T，当须淘汰一个页面时，选择现有页面中其 T 值最大的，即最近最久未使用的页面予以淘汰。</li><li><strong>LFU （Least Frequently Used）页面置换算法（最少使用页面置换算法）</strong> : 该置换算法选择在之前时期使用最少的页面作为淘汰页。</li></ul>]]></content>
+    
+    <summary type="html">
+    
+      &lt;hr&gt;
+    
+    </summary>
+    
+    
+      <category term="操作系统" scheme="http://yoursite.com/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>进程和线程</title>
+    <link href="http://yoursite.com/2020/08/18/%E8%BF%9B%E7%A8%8B%E5%92%8C%E7%BA%BF%E7%A8%8B/"/>
+    <id>http://yoursite.com/2020/08/18/%E8%BF%9B%E7%A8%8B%E5%92%8C%E7%BA%BF%E7%A8%8B/</id>
+    <published>2020-08-18T13:45:54.000Z</published>
+    <updated>2020-08-18T13:50:18.945Z</updated>
+    
+    <content type="html"><![CDATA[<hr><a id="more"></a><h2 id="进程和线程"><a href="#进程和线程" class="headerlink" title="进程和线程"></a>进程和线程</h2><h3 id="进程和线程的区别"><a href="#进程和线程的区别" class="headerlink" title="进程和线程的区别"></a>进程和线程的区别</h3><p><img src="https://my-blog-to-use.oss-cn-beijing.aliyuncs.com/2019-11/ff96fed0e2a354bb16bbc84dcedf503a.png" alt="jvm运行时数据区域"></p><p>从上图可以看出：一个进程中可以有多个线程，多个线程共享进程的<strong>堆</strong>和<strong>方法区 (JDK1.8 之后的元空间)</strong>资源，但是每个线程有自己的<strong>程序计数器</strong>、<strong>虚拟机栈</strong> 和 <strong>本地方法栈</strong>。</p><p><strong>总结：</strong> 线程是进程划分成的更小的运行单位,一个进程在其执行的过程中可以产生多个线程。线程和进程最大的不同在于基本上各进程是独立的，而各线程则不一定，因为同一进程中的线程极有可能会相互影响。线程执行开销小，但不利于资源的管理和保护；而进程正相反。</p><h3 id="进程有哪几种状态"><a href="#进程有哪几种状态" class="headerlink" title="进程有哪几种状态?"></a>进程有哪几种状态?</h3><ul><li><strong>创建状态(new)</strong> ：进程正在被创建，尚未到就绪状态。</li><li><strong>就绪状态(ready)</strong> ：进程已处于准备运行状态，即进程获得了除了处理器之外的一切所需资源，一旦得到处理器资源(处理器分配的时间片)即可运行。</li><li><strong>运行状态(running)</strong> ：进程正在处理器上上运行(单核 CPU 下任意时刻只有一个进程处于运行状态)。</li><li><strong>阻塞状态(waiting)</strong> ：又称为等待状态，进程正在等待某一事件而暂停运行如等待某资源为可用或等待 IO 操作完成。即使处理器空闲，该进程也不能运行。</li><li><strong>结束状态(terminated)</strong> ：进程正在从系统中消失。可能是进程正常结束或其他原因中断退出运行。</li></ul><blockquote><p>订正：下图中 running 状态被 interrupt 向 ready 状态转换的箭头方向反了。</p></blockquote><p><img src="https://my-blog-to-use.oss-cn-beijing.aliyuncs.com/2019-11/d38202593012b457debbcd74994c6292.png" alt="process-state"></p><h3 id="进程间的通信方式"><a href="#进程间的通信方式" class="headerlink" title="进程间的通信方式"></a>进程间的通信方式</h3><ol><li><strong>管道/匿名管道(Pipes)</strong> ：用于具有亲缘关系的父子进程间或者兄弟进程之间的通信。</li><li><strong>有名管道(Names Pipes)</strong> : 匿名管道由于没有名字，只能用于亲缘关系的进程间通信。为了克服这个缺点，提出了有名管道。有名管道严格遵循<strong>先进先出(first in first out)</strong>。有名管道以磁盘文件的方式存在，可以实现本机任意两个进程通信。</li><li><strong>信号(Signal)</strong> ：信号是一种比较复杂的通信方式，用于通知接收进程某个事件已经发生；</li><li><strong>消息队列(Message Queuing)</strong> ：消息队列是消息的链表,具有特定的格式,存放在内存中并由消息队列标识符标识。管道和消息队列的通信数据都是先进先出的原则。与管道（无名管道：只存在于内存中的文件；命名管道：存在于实际的磁盘介质或者文件系统）不同的是消息队列存放在内核中，只有在内核重启(即，操作系统重启)或者显示地删除一个消息队列时，该消息队列才会被真正的删除。消息队列可以实现消息的随机查询,消息不一定要以先进先出的次序读取,也可以按消息的类型读取.比 FIFO 更有优势。<strong>消息队列克服了信号承载信息量少，管道只能承载无格式字 节流以及缓冲区大小受限等缺。</strong></li><li><strong>信号量(Semaphores)</strong> ：信号量是一个计数器，用于多进程对共享数据的访问，信号量的意图在于进程间同步。这种通信方式主要用于解决与同步相关的问题并避免竞争条件。</li><li><strong>共享内存(Shared memory)</strong> ：使得多个进程可以访问同一块内存空间，不同进程可以及时看到对方进程中对共享内存中数据的更新。这种方式需要依靠某种同步操作，如互斥锁和信号量等。可以说这是最有用的进程间通信方式。</li><li><strong>套接字(Sockets)</strong> : 此方法主要用于在客户端和服务器之间通过网络进行通信。套接字是支持 TCP/IP 的网络通信的基本操作单元，可以看做是不同主机之间的进程进行双向通信的端点，简单的说就是通信的两方的一种约定，用套接字中的相关函数来完成通信过程。</li></ol><h3 id="线程间的同步的方式"><a href="#线程间的同步的方式" class="headerlink" title="线程间的同步的方式"></a>线程间的同步的方式</h3><p>线程同步是两个或多个共享关键资源的线程的并发执行。应该同步线程以避免关键的资源使用冲突。操作系统一般有下面三种线程同步的方式：</p><ol><li><strong>互斥量(Mutex)</strong>：采用互斥对象机制，只有拥有互斥对象的线程才有访问公共资源的权限。因为互斥对象只有一个，所以可以保证公共资源不会被多个线程同时访问。比如 Java 中的 synchronized 关键词和各种 Lock 都是这种机制。</li><li><strong>信号量(Semphares)</strong> ：它允许同一时刻多个线程访问同一资源，但是需要控制同一时刻访问此资源的最大线程数量</li><li><strong>事件(Event)</strong> :Wait/Notify：通过通知操作的方式来保持多线程同步，还可以方便的实现多线程优先级的比较操</li></ol><h3 id="进程的调度算法"><a href="#进程的调度算法" class="headerlink" title="进程的调度算法"></a>进程的调度算法</h3><p>为了确定首先执行哪个进程以及最后执行哪个进程以实现最大 CPU 利用率，计算机科学家已经定义了一些算法，它们是：</p><ul><li><strong>先到先服务(FCFS)调度算法</strong> : 从就绪队列中选择一个最先进入该队列的进程为之分配资源，使它立即执行并一直执行到完成或发生某事件而被阻塞放弃占用 CPU 时再重新调度。</li><li><strong>短作业优先(SJF)的调度算法</strong> : 从就绪队列中选出一个估计运行时间最短的进程为之分配资源，使它立即执行并一直执行到完成或发生某事件而被阻塞放弃占用 CPU 时再重新调度。</li><li><strong>时间片轮转调度算法</strong> : 时间片轮转调度是一种最古老，最简单，最公平且使用最广的算法，又称 RR(Round robin)调度。每个进程被分配一个时间段，称作它的时间片，即该进程允许运行的时间。</li><li><strong>多级反馈队列调度算法</strong> ：前面介绍的几种进程调度的算法都有一定的局限性。如<strong>短进程优先的调度算法，仅照顾了短进程而忽略了长进程</strong> 。多级反馈队列调度算法既能使高优先级的作业得到响应又能使短作业（进程）迅速完成。，因而它是目前<strong>被公认的一种较好的进程调度算法</strong>，UNIX 操作系统采取的便是这种调度算法。</li><li><strong>优先级调度</strong> ： 为每个流程分配优先级，首先执行具有最高优先级的进程，依此类推。具有相同优先级的进程以 FCFS 方式执行。可以根据内存要求，时间要求或任何其他资源要求来确定优先级。</li></ul>]]></content>
+    
+    <summary type="html">
+    
+      &lt;hr&gt;
+    
+    </summary>
+    
+    
+      <category term="操作系统" scheme="http://yoursite.com/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"/>
+    
+    
+      <category term="进程" scheme="http://yoursite.com/tags/%E8%BF%9B%E7%A8%8B/"/>
+    
+      <category term="线程" scheme="http://yoursite.com/tags/%E7%BA%BF%E7%A8%8B/"/>
+    
+  </entry>
   
   <entry>
     <title>LeetCode 114.二叉树展开为链表</title>
@@ -424,81 +491,6 @@
       <category term="Java" scheme="http://yoursite.com/tags/Java/"/>
     
       <category term="动态规划" scheme="http://yoursite.com/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>LeetCode 70.爬楼梯</title>
-    <link href="http://yoursite.com/2020/08/01/LeetCode-70-%E7%88%AC%E6%A5%BC%E6%A2%AF/"/>
-    <id>http://yoursite.com/2020/08/01/LeetCode-70-%E7%88%AC%E6%A5%BC%E6%A2%AF/</id>
-    <published>2020-08-01T13:41:20.000Z</published>
-    <updated>2020-08-02T14:15:32.771Z</updated>
-    
-    <content type="html"><![CDATA[<hr><a id="more"></a><h4 id="方法：动态规划"><a href="#方法：动态规划" class="headerlink" title="方法：动态规划"></a>方法：动态规划</h4><p>本问题其实常规解法可以分成多个子问题，爬第n阶楼梯的方法数量，等于 2 部分之和</p><p>爬上 n-1n−1 阶楼梯的方法数量。因为再爬1阶就能到第n阶<br>爬上 n-2n−2 阶楼梯的方法数量，因为再爬2阶就能到第n阶<br>所以我们得到公式 dp[n] = dp[n-1] + dp[n-2]dp[n]=dp[n−1]+dp[n−2]<br>同时需要初始化 dp[0]=1dp[0]=1 和 dp[1]=1dp[1]=1</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">climbStairs</span><span class="params">(<span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span>[] dp = <span class="keyword">new</span> <span class="keyword">int</span>[n + <span class="number">1</span>];</span><br><span class="line">        dp[<span class="number">0</span>] = <span class="number">1</span>;</span><br><span class="line">        dp[<span class="number">1</span>] = <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">2</span>; i &lt;= n; i++) &#123;</span><br><span class="line">            dp[i] = dp[i - <span class="number">1</span>] + dp[i - <span class="number">2</span>];</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> dp[n];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p><strong>复杂度</strong></p><ul><li>时间复杂度：O(\log n)<em>O</em>(log<em>n</em>)，<code>pow</code> 方法将会用去 O(\log n)<em>O</em>(log<em>n</em>) 的时间。</li><li>空间复杂度：O(1)<em>O</em>(1)。</li></ul>]]></content>
-    
-    <summary type="html">
-    
-      &lt;hr&gt;
-    
-    </summary>
-    
-    
-      <category term="LeetCode" scheme="http://yoursite.com/categories/LeetCode/"/>
-    
-    
-      <category term="Java" scheme="http://yoursite.com/tags/Java/"/>
-    
-      <category term="动态规划" scheme="http://yoursite.com/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>LeetCode 46.全排列</title>
-    <link href="http://yoursite.com/2020/07/25/LeetCode-46-%E5%85%A8%E6%8E%92%E5%88%97/"/>
-    <id>http://yoursite.com/2020/07/25/LeetCode-46-%E5%85%A8%E6%8E%92%E5%88%97/</id>
-    <published>2020-07-25T15:09:34.000Z</published>
-    <updated>2020-08-02T14:14:50.588Z</updated>
-    
-    <content type="html"><![CDATA[<hr><a id="more"></a><h4 id="方法：「回溯」算法（深度优先遍历-状态重置-剪枝）"><a href="#方法：「回溯」算法（深度优先遍历-状态重置-剪枝）" class="headerlink" title="方法：「回溯」算法（深度优先遍历 + 状态重置 + 剪枝）"></a>方法：「回溯」算法（深度优先遍历 + 状态重置 + 剪枝）</h4><p>使用编程的方法得到全排列，就是在这样的一个树形结构中进行编程，具体来说，就是<strong>执行一次深度优先遍历，从树的根结点到叶子结点形成的路径就是一个全排列</strong>。</p><p><img src="https://pic.leetcode-cn.com/0bf18f9b86a2542d1f6aa8db6cc45475fce5aa329a07ca02a9357c2ead81eec1-image.png" alt="image.png"></p><p>说明：</p><p>1、每一个结点表示了“全排列”问题求解的不同阶段，这些阶段通过变量的“不同的值”体现；<br>2、这些变量的不同的值，也称之为“状态”；<br>3、使用深度优先遍历有“回头”的过程，在“回头”以后，状态变量需要设置成为和先前一样；<br>4、因此在回到上一层结点的过程中，需要撤销上一次选择，这个操作也称之为“状态重置”；<br>5、深度优先遍历，可以直接借助系统栈空间，为我们保存所需要的状态变量，在编码中只需要注意遍历到相应的结点的时候，状态变量的值是正确的，具体的做法是：往下走一层的时候，<code>path</code> 变量在尾部追加，而往回走的时候，需要撤销上一次的选择，也是在尾部操作，因此 <code>path</code> 变量是一个栈。<br>6、深度优先遍历通过“回溯”操作，实现了全局使用一份状态变量的效果。</p><p>下面我们解释如何编码：</p><p>1、首先这棵树除了根结点和叶子结点以外，每一个结点做的事情其实是一样的，即在已经选了一些数的前提，我们需要在剩下还没有选择的数中按照顺序依次选择一个数，这显然是一个递归结构；</p><p>2、递归的终止条件是，数已经选够了，因此我们需要一个变量来表示当前递归到第几层，我们把这个变量叫做 <code>depth</code>；</p><p>3、这些结点实际上表示了搜索（查找）全排列问题的不同阶段，为了区分这些不同阶段，我们就需要一些变量来记录为了得到一个全排列，程序进行到哪一步了，在这里我们需要两个变量：</p><p>（1）已经选了哪些数，到叶子结点时候，这些已经选择的数就构成了一个全排列；<br>（2）一个布尔数组 <code>used</code>，初始化的时候都为 <code>false</code> 表示这些数还没有被选择，当我们选定一个数的时候，就将这个数组的相应位置设置为 <code>true</code> ，这样在考虑下一个位置的时候，就能够以 O(1)<em>O</em>(1) 的时间复杂度判断这个数是否被选择过，这是一种“以空间换时间”的思想。</p><p>我们把这两个变量称之为“状态变量”，它们表示了我们在求解一个问题的时候所处的阶段。</p><p>4、在非叶子结点处，产生不同的分支，这一操作的语义是：在还未选择的数中依次选择一个元素作为下一个位置的元素，这显然得通过一个循环实现。</p><p>5、另外，因为是执行深度优先遍历，从较深层的结点返回到较浅层结点的时候，需要做“状态重置”，即“回到过去”、“恢复现场”，我们举一个例子。</p><p>从 <code>[1, 2, 3]</code> 到 <code>[1, 3, 2]</code> ，深度优先遍历是这样做的，从 <code>[1, 2, 3]</code> 回到 <code>[1, 2]</code> 的时候，需要撤销刚刚已经选择的数 <code>3</code>，因为在这一层只有一个数 <code>3</code> 我们已经尝试过了，因此程序回到上一层，需要撤销对 <code>2</code> 的选择，好让后面的程序知道，选择 <code>3</code> 了以后还能够选择 <code>2</code>。</p><p>这种在遍历的过程中，从深层结点回到浅层结点的过程中所做的操作就叫“回溯”。</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> List&lt;List&lt;Integer&gt;&gt; permute(<span class="keyword">int</span>[] nums) &#123;</span><br><span class="line">        <span class="comment">// 首先是特判</span></span><br><span class="line">        <span class="keyword">int</span> len = nums.length;</span><br><span class="line">        <span class="comment">// 使用一个动态数组保存所有可能的全排列</span></span><br><span class="line">        List&lt;List&lt;Integer&gt;&gt; res = <span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> (len == <span class="number">0</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> res;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">boolean</span>[] used = <span class="keyword">new</span> <span class="keyword">boolean</span>[len];</span><br><span class="line">        List&lt;Integer&gt; path = <span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line"></span><br><span class="line">        dfs(nums, len, <span class="number">0</span>, path, used, res);</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">dfs</span><span class="params">(<span class="keyword">int</span>[] nums, <span class="keyword">int</span> len, <span class="keyword">int</span> depth,</span></span></span><br><span class="line"><span class="function"><span class="params">                     List&lt;Integer&gt; path, <span class="keyword">boolean</span>[] used,</span></span></span><br><span class="line"><span class="function"><span class="params">                     List&lt;List&lt;Integer&gt;&gt; res)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (depth == len) &#123;</span><br><span class="line">            res.add(<span class="keyword">new</span> ArrayList&lt;&gt;(path));</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; len; i++) &#123;</span><br><span class="line">            <span class="keyword">if</span> (!used[i]) &#123;</span><br><span class="line">                path.add(nums[i]);</span><br><span class="line">                used[i] = <span class="keyword">true</span>;</span><br><span class="line"></span><br><span class="line">                dfs(nums, len, depth + <span class="number">1</span>, path, used, res);</span><br><span class="line">                <span class="comment">// 注意：这里是状态重置，是从深层结点回到浅层结点的过程，代码在形式上和递归之前是对称的</span></span><br><span class="line">                used[i] = <span class="keyword">false</span>;</span><br><span class="line">                path.remove(path.size() - <span class="number">1</span>);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
-    
-    <summary type="html">
-    
-      &lt;hr&gt;
-    
-    </summary>
-    
-    
-      <category term="LeetCode" scheme="http://yoursite.com/categories/LeetCode/"/>
-    
-    
-      <category term="Java" scheme="http://yoursite.com/tags/Java/"/>
-    
-      <category term="回溯算法" scheme="http://yoursite.com/tags/%E5%9B%9E%E6%BA%AF%E7%AE%97%E6%B3%95/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>剑指Offer 64.求1+2+..n</title>
-    <link href="http://yoursite.com/2020/07/23/%E5%89%91%E6%8C%87Offer-64-%E6%B1%821-2-n/"/>
-    <id>http://yoursite.com/2020/07/23/%E5%89%91%E6%8C%87Offer-64-%E6%B1%821-2-n/</id>
-    <published>2020-07-23T14:04:06.000Z</published>
-    <updated>2020-07-23T14:07:09.365Z</updated>
-    
-    <content type="html"><![CDATA[<hr><a id="more"></a><h4 id="短路-递归"><a href="#短路-递归" class="headerlink" title="短路 递归"></a>短路 递归</h4><h5 id="逻辑运算符的短路效应："><a href="#逻辑运算符的短路效应：" class="headerlink" title="逻辑运算符的短路效应："></a>逻辑运算符的短路效应：</h5><p>常见的逻辑运算符有三种，即 “与 &amp;&amp;&amp;&amp; ”，“或 ||∣∣ ”，“非 !! ” ；而其有重要的短路效应，如下所示：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">if(A &amp;&amp; B)  &#x2F;&#x2F; 若 A 为 false ，则 B 的判断不会执行（即短路），直接判定 A &amp;&amp; B 为 false</span><br><span class="line"></span><br><span class="line">if(A || B) &#x2F;&#x2F; 若 A 为 true ，则 B 的判断不会执行（即短路），直接判定 A || B 为 true</span><br></pre></td></tr></table></figure><p>本题需要实现 “当 n = 1<em>n</em>=1 时终止递归” 的需求，可通过短路效应实现。</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">n &gt; 1 &amp;&amp; sumNums(n - 1) &#x2F;&#x2F; 当 n &#x3D; 1 时 n &gt; 1 不成立 ，此时 “短路”</span><br></pre></td></tr></table></figure><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> res = <span class="number">0</span>;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">sumNums</span><span class="params">(<span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">boolean</span> x = n &gt; <span class="number">1</span> &amp;&amp; sumNums(n - <span class="number">1</span>) &gt; <span class="number">0</span>;</span><br><span class="line">        res += n;</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h5 id="复杂度分析："><a href="#复杂度分析：" class="headerlink" title="复杂度分析："></a>复杂度分析：</h5><ul><li><strong>时间复杂度 O(n)：</strong> 计算 n + (n-1) + … +2+1 需要开启 n 个递归函数。</li><li><strong>空间复杂度 O(n)：</strong> 递归深度达到 n，系统使用 O(n)大小的额外空间。</li></ul>]]></content>
-    
-    <summary type="html">
-    
-      &lt;hr&gt;
-    
-    </summary>
-    
-    
-      <category term="剑指offer" scheme="http://yoursite.com/categories/%E5%89%91%E6%8C%87offer/"/>
-    
-    
-      <category term="Java" scheme="http://yoursite.com/tags/Java/"/>
-    
-      <category term="算法" scheme="http://yoursite.com/tags/%E7%AE%97%E6%B3%95/"/>
     
   </entry>
   
